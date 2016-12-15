@@ -1,15 +1,25 @@
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true
-    },
-    "exclude": [
-        "node_modules",
-        "public/js"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "./node_modules/@types/"
+    ],
+    "types": [
+      "hammerjs",
+      "jasmine",
+      "node"
     ]
+  },
+  "exclude": [
+    "node_modules",
+    "public/js"
+  ],
+  "atom": { "rewriteTsconfig": false }
 }
