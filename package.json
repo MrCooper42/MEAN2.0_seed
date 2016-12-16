@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/bin/www",
     "build": "del-cli ./public/js/app && webpack --config ./config/webpack.config.dev.js --progress --profile --watch",
-    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts'",
+    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config ./config/webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'public/src/app/**/*.ngfactory.ts' 'public/src/app/**/*.shim.ts'",
     "lint": "tslint \"public/src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -34,6 +34,7 @@
     "mongoose": "^4.7.2",
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "~1.7.0",
+    "passport": "^0.3.2",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "serve-favicon": "~2.3.0",

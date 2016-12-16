@@ -4,11 +4,11 @@ var commonConfig = require('./webpack.config.common.js');
 
 module.exports = webpackMerge.smart(commonConfig, {
     entry: {
-        'app': '../src/main.aot.ts'
+        'app': './public/src/main.aot.ts'
     },
 
     output: {
-        path: './public/js/app',
+        path: '../public/js/app',
         filename: 'bundle.js',
         publicPath: '/js/app/',
         chunkFilename: '[id].[hash].chunk.js'
