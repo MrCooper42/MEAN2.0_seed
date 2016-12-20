@@ -9,8 +9,8 @@ module.exports = webpackMerge.smart(commonConfig, {
   profile: true,
   devtool: false,
   entry: {
-    'polyfills': './public/src/polyfills'
-    'app': './public/src/main.aot'
+    'polyfills': '../public/src/polyfills'
+    'app': '../public/src/main.aot'
   },
 
   output: {

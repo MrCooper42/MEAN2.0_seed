@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import {AppComponent, DialogContent} from './app.component';
-// import { AppComponent } from './app.component';
 import { HeaderComponent } from "./shared/header.component";
 import { AuthService } from "./auth/auth.service";
 import { AuthComponent } from './auth/auth.component';
@@ -17,7 +16,7 @@ import { ErrorService } from './error/error.service';
 
 @NgModule({
   declarations: [
-    // AppComponent,
+    AppComponent,
     AuthComponent,
     ErrorComponent,
     AppComponent,
