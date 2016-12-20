@@ -1,40 +1,42 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: {
-        'app': './public/src/main.ts'
-    },
+  entry: {
+    'app': './public/src/main.ts'
+  },
 
-    resolve: {
-        extensions: ['.js', '.ts']
-    },
+  resolve: {
+    extensions: ['.ts', '.js', '.jpg', '.jpeg', '.gif', '.png', '.css', '.html']
+  },
 
-    module: {
+  module: {
+    loaders: [
+      {
+        test: /\.ts$/,
         loaders: [
-            {
-                test: /\.ts$/,
-                loaders: [
-                    'awesome-typescript-loader',
-                    'angular2-template-loader',
-                    'angular2-router-loader'
-                ]
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader'
-            },
-            {
-                test: /\.css$/,
-                loader: 'raw-loader'
-            }
-        ]
-    },
-
-    plugins: [
-        new webpack.ContextReplacementPlugin(
-            // The (\\|\/) piece accounts for path separators in *nix and Windows
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-            './public/src' // location of your src
-        )
+          'awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader'
+        ],
+        exclude: /node_modules/
+      }, {
+        test: /\.html$/,
+        loader: 'html-loader'
+      }, {
+        test: /\.css$/,
+        loader: 'raw-loader'
+      }, {
+        test: /\.(jpg|jpeg|gif|png)$/,
+        loader: 'file-loader?name=img/[path][name].[ext]'
+      }, {
+        test: /\.(eof|woff|woff2|svg)$/,
+        loader: 'file-loader?name=img/[path][name].[ext]'
+      }
     ]
+  },
+  // modulesDirectories: ['node_modules'],
+
+  plugins: [
+    new webpack.ContextReplacementPlugin(
+    // The (\\|\/) piece accounts for path separators in *nix and Windows
+    /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/, './public/src' // location of your src
+    )]
 };

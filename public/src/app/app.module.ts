@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
-import {Material2AppAppComponent, DialogContent} from './app.component';
+import {AppComponent, DialogContent} from './app.component';
 // import { AppComponent } from './app.component';
 import { HeaderComponent } from "./shared/header.component";
 import { AuthService } from "./auth/auth.service";
@@ -20,7 +20,7 @@ import { ErrorService } from './error/error.service';
     // AppComponent,
     AuthComponent,
     ErrorComponent,
-    Material2AppAppComponent,
+    AppComponent,
     DialogContent
   ],
   imports: [
@@ -30,6 +30,6 @@ import { ErrorService } from './error/error.service';
     HttpModule
   ],
   providers: [AuthService, ErrorService],
-  bootstrap: [Material2AppAppComponent]
+  bootstrap: [AppComponent]
 })
-export class MaterialAppModule { }
+export class AppModule { }
