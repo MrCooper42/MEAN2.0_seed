@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/bin/www",
     "build": "del-cli ./public/js/app && webpack --config ./config/webpack.config.dev.js --progress --profile --watch",
-    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config ./config/webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'public/src/app/**/*.ngfactory.ts' 'public/src/app/**/*.shim.ts'",
+    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config config/webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'public/src/app/**/*.ngfactory.ts' 'public/src/app/**/*.shim.ts'",
     "lint": "tslint \"public/src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -47,6 +47,7 @@
     "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
+    "@types/selenium-webdriver": "^2.53.36",
     "angular-cli": "1.0.0-beta.22-1",
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
@@ -65,7 +66,7 @@
     "raw-loader": "^0.5.1",
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
-    "typescript": "^2.0.10",
+    "typescript": "2.0.10",
     "webdriver-manager": "10.2.5",
     "webpack": "^2.2.0-rc.0",
     "webpack-merge": "^1.1.1"

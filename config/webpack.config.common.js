@@ -32,6 +32,11 @@ module.exports = {
   // modulesDirectories: ['node_modules'],
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+    name: ['app']
+    // 'vendor', 'polyfills'
+  }),
+
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/, '../public/src' // location of your src
