@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-export var AuthComponent = (function () {
-    function AuthComponent() {
+export class AuthComponent {
+    constructor() {
     }
-    AuthComponent.prototype.ngOnInit = function () {
-    };
-    AuthComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'app-auth',
-                    templateUrl: './auth.component.html',
-                    styleUrls: ['./auth.component.css']
-                },] },
-    ];
-    /** @nocollapse */
-    AuthComponent.ctorParameters = [];
-    return AuthComponent;
-}());
+    ngOnInit() {
+    }
+}
+AuthComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'app-auth',
+                templateUrl: './auth.component.html',
+                styleUrls: ['./auth.component.css']
+            },] },
+];
+/** @nocollapse */
+AuthComponent.ctorParameters = [];
 //# sourceMappingURL=auth.component.js.map

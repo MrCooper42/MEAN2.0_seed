@@ -1,32 +1,30 @@
 import { Component } from "@angular/core";
 import { ErrorService } from "./error.service";
-export var ErrorComponent = (function () {
-    function ErrorComponent(errorService) {
+export class ErrorComponent {
+    constructor(errorService) {
         this.errorService = errorService;
         this.display = 'none';
     }
-    ErrorComponent.prototype.onErrorHandled = function () {
+    onErrorHandled() {
         this.display = 'none';
-    };
-    ErrorComponent.prototype.ngOnInit = function () {
-        var _this = this;
+    }
+    ngOnInit() {
         this.errorService.errorOccured
-            .subscribe(function (error) {
-            _this.error = error;
-            _this.display = 'block';
+            .subscribe((error) => {
+            this.error = error;
+            this.display = 'block';
         });
-    };
-    ErrorComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'app-error',
-                    templateUrl: './error.component.html',
-                    styles: ['./error.component.css']
-                },] },
-    ];
-    /** @nocollapse */
-    ErrorComponent.ctorParameters = [
-        { type: ErrorService, },
-    ];
-    return ErrorComponent;
-}());
+    }
+}
+ErrorComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'app-error',
+                templateUrl: './error.component.html',
+                styles: ['./error.component.css']
+            },] },
+];
+/** @nocollapse */
+ErrorComponent.ctorParameters = [
+    { type: ErrorService, },
+];
 //# sourceMappingURL=error.component.js.map

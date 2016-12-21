@@ -129,7 +129,7 @@ class View_AppComponent_Host0 extends import1.AppView<any> {
     super(View_AppComponent_Host0,renderType_AppComponent_Host,import5.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
-    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'material2-app-app',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
+    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'root-app',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
     this.compView_0 = new View_AppComponent0(this.viewUtils,this,0,this._el_0);
     this._AppComponent_0_3 = new Wrapper_AppComponent(this.injectorGet(import8.MdDialog,this.parentIndex),this.injectorGet(import9.MdSnackBar,this.parentIndex));
     this.compView_0.create(this._AppComponent_0_3.context);
@@ -151,7 +151,7 @@ class View_AppComponent_Host0 extends import1.AppView<any> {
     cb(this._el_0,ctx);
   }
 }
-export const AppComponentNgFactory:import7.ComponentFactory<import0.AppComponent> = new import7.ComponentFactory<import0.AppComponent>('material2-app-app',View_AppComponent_Host0,import0.AppComponent);
+export const AppComponentNgFactory:import7.ComponentFactory<import0.AppComponent> = new import7.ComponentFactory<import0.AppComponent>('root-app',View_AppComponent_Host0,import0.AppComponent);
 const styles_AppComponent:any[] = [import10.styles];
 var renderType_AppComponent:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.Emulated,styles_AppComponent,{});
 export class View_AppComponent0 extends import1.AppView<import0.AppComponent> {

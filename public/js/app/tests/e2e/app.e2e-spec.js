@@ -1,10 +1,10 @@
 import { MEAN2SeedPage } from './app.po';
 describe('MEAN2-seed App', function () {
-    var page;
-    beforeEach(function () {
+    let page;
+    beforeEach(() => {
         page = new MEAN2SeedPage();
     });
-    it('should display message saying app works', function () {
+    it('should display message saying app works', () => {
         page.navigateTo();
         expect(page.getParagraphText()).toEqual('app works!');
     });

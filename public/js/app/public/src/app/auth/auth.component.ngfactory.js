@@ -4,11 +4,6 @@
  * @suppress {suspiciousCode,uselessCode,missingProperties}
  */
 /* tslint:disable */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 import * as import0 from './auth.component';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import3 from '@angular/core/src/linker/view_utils';
@@ -17,16 +12,16 @@ import * as import5 from '@angular/core/src/linker/view_type';
 import * as import6 from '@angular/core/src/change_detection/change_detection';
 import * as import7 from '@angular/core/src/linker/component_factory';
 import * as import8 from './auth.component.css.shim';
-export var Wrapper_AuthComponent = (function () {
-    function Wrapper_AuthComponent() {
+export class Wrapper_AuthComponent {
+    constructor() {
         this._changed = false;
         this.context = new import0.AuthComponent();
     }
-    Wrapper_AuthComponent.prototype.ngOnDetach = function (view, componentView, el) {
-    };
-    Wrapper_AuthComponent.prototype.ngOnDestroy = function () {
-    };
-    Wrapper_AuthComponent.prototype.ngDoCheck = function (view, el, throwOnChange) {
+    ngOnDetach(view, componentView, el) {
+    }
+    ngOnDestroy() {
+    }
+    ngDoCheck(view, el, throwOnChange) {
         var changed = this._changed;
         this._changed = false;
         if (!throwOnChange) {
@@ -35,60 +30,56 @@ export var Wrapper_AuthComponent = (function () {
             }
         }
         return changed;
-    };
-    Wrapper_AuthComponent.prototype.checkHost = function (view, componentView, el, throwOnChange) {
-    };
-    Wrapper_AuthComponent.prototype.handleEvent = function (eventName, $event) {
+    }
+    checkHost(view, componentView, el, throwOnChange) {
+    }
+    handleEvent(eventName, $event) {
         var result = true;
         return result;
-    };
-    Wrapper_AuthComponent.prototype.subscribe = function (view, _eventHandler) {
-        this._eventHandler = _eventHandler;
-    };
-    return Wrapper_AuthComponent;
-}());
-var renderType_AuthComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
-var View_AuthComponent_Host0 = (function (_super) {
-    __extends(View_AuthComponent_Host0, _super);
-    function View_AuthComponent_Host0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_AuthComponent_Host0, renderType_AuthComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_AuthComponent_Host0.prototype.createInternal = function (rootSelector) {
+    subscribe(view, _eventHandler) {
+        this._eventHandler = _eventHandler;
+    }
+}
+var renderType_AuthComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
+class View_AuthComponent_Host0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_AuthComponent_Host0, renderType_AuthComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
         this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer, 'app-auth', import3.EMPTY_INLINE_ARRAY, rootSelector, null);
         this.compView_0 = new View_AuthComponent0(this.viewUtils, this, 0, this._el_0);
         this._AuthComponent_0_3 = new Wrapper_AuthComponent();
         this.compView_0.create(this._AuthComponent_0_3.context);
         this.init(this._el_0, (this.renderer.directRenderer ? null : [this._el_0]), null);
         return new import7.ComponentRef_(0, this, this._el_0, this._AuthComponent_0_3.context);
-    };
-    View_AuthComponent_Host0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import0.AuthComponent) && (0 === requestNodeIndex))) {
             return this._AuthComponent_0_3.context;
         }
         return notFoundResult;
-    };
-    View_AuthComponent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._AuthComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
         this.compView_0.detectChanges(throwOnChange);
-    };
-    View_AuthComponent_Host0.prototype.destroyInternal = function () {
-        this.compView_0.destroy();
-    };
-    View_AuthComponent_Host0.prototype.visitRootNodesInternal = function (cb, ctx) {
-        cb(this._el_0, ctx);
-    };
-    return View_AuthComponent_Host0;
-}(import1.AppView));
-export var AuthComponentNgFactory = new import7.ComponentFactory('app-auth', View_AuthComponent_Host0, import0.AuthComponent);
-var styles_AuthComponent = [import8.styles];
-var renderType_AuthComponent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.Emulated, styles_AuthComponent, {});
-export var View_AuthComponent0 = (function (_super) {
-    __extends(View_AuthComponent0, _super);
-    function View_AuthComponent0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_AuthComponent0, renderType_AuthComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_AuthComponent0.prototype.createInternal = function (rootSelector) {
-        var parentRenderNode = this.renderer.createViewRoot(this.parentElement);
+    destroyInternal() {
+        this.compView_0.destroy();
+    }
+    visitRootNodesInternal(cb, ctx) {
+        cb(this._el_0, ctx);
+    }
+}
+export const AuthComponentNgFactory = new import7.ComponentFactory('app-auth', View_AuthComponent_Host0, import0.AuthComponent);
+const styles_AuthComponent = [import8.styles];
+var renderType_AuthComponent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.Emulated, styles_AuthComponent, {});
+export class View_AuthComponent0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_AuthComponent0, renderType_AuthComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
+        const parentRenderNode = this.renderer.createViewRoot(this.parentElement);
         this._el_0 = import3.createRenderElement(this.renderer, parentRenderNode, 'p', import3.EMPTY_INLINE_ARRAY, null);
         this._text_1 = this.renderer.createText(this._el_0, '\n  auth works!\n', null);
         this._text_2 = this.renderer.createText(parentRenderNode, '\n', null);
@@ -98,7 +89,6 @@ export var View_AuthComponent0 = (function (_super) {
             this._text_2
         ]), null);
         return null;
-    };
-    return View_AuthComponent0;
-}(import1.AppView));
+    }
+}
 //# sourceMappingURL=auth.component.ngfactory.js.map

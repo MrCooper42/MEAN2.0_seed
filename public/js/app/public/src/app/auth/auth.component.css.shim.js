@@ -4,5 +4,5 @@
  * @suppress {suspiciousCode,uselessCode,missingProperties}
  */
 /* tslint:disable */
-export var styles = [''];
+export const styles = [''];
 //# sourceMappingURL=auth.component.css.shim.js.map

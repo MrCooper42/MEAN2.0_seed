@@ -4,11 +4,6 @@
  * @suppress {suspiciousCode,uselessCode,missingProperties}
  */
 /* tslint:disable */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 import * as import0 from './app.component';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import3 from '@angular/core/src/linker/view_utils';
@@ -69,183 +64,146 @@ import * as import57 from '@angular/material/menu/menu-trigger';
 import * as import58 from '../../../node_modules/@angular/material/core/line/line.ngfactory';
 import * as import59 from '@angular/material/core/line/line';
 import * as import60 from '@angular/material/dialog/dialog-ref';
-export var Wrapper_AppComponent = (function () {
-    function Wrapper_AppComponent(p0, p1) {
+export class Wrapper_AppComponent {
+    constructor(p0, p1) {
         this._changed = false;
         this.context = new import0.AppComponent(p0, p1);
     }
-    Wrapper_AppComponent.prototype.ngOnDetach = function (view, componentView, el) {
-    };
-    Wrapper_AppComponent.prototype.ngOnDestroy = function () {
-    };
-    Wrapper_AppComponent.prototype.ngDoCheck = function (view, el, throwOnChange) {
+    ngOnDetach(view, componentView, el) {
+    }
+    ngOnDestroy() {
+    }
+    ngDoCheck(view, el, throwOnChange) {
         var changed = this._changed;
         this._changed = false;
         return changed;
-    };
-    Wrapper_AppComponent.prototype.checkHost = function (view, componentView, el, throwOnChange) {
-    };
-    Wrapper_AppComponent.prototype.handleEvent = function (eventName, $event) {
+    }
+    checkHost(view, componentView, el, throwOnChange) {
+    }
+    handleEvent(eventName, $event) {
         var result = true;
         return result;
-    };
-    Wrapper_AppComponent.prototype.subscribe = function (view, _eventHandler) {
+    }
+    subscribe(view, _eventHandler) {
         this._eventHandler = _eventHandler;
-    };
-    return Wrapper_AppComponent;
-}());
-export var Wrapper_DialogContent = (function () {
-    function Wrapper_DialogContent(p0) {
+    }
+}
+export class Wrapper_DialogContent {
+    constructor(p0) {
         this._changed = false;
         this.context = new import0.DialogContent(p0);
     }
-    Wrapper_DialogContent.prototype.ngOnDetach = function (view, componentView, el) {
-    };
-    Wrapper_DialogContent.prototype.ngOnDestroy = function () {
-    };
-    Wrapper_DialogContent.prototype.ngDoCheck = function (view, el, throwOnChange) {
+    ngOnDetach(view, componentView, el) {
+    }
+    ngOnDestroy() {
+    }
+    ngDoCheck(view, el, throwOnChange) {
         var changed = this._changed;
         this._changed = false;
         return changed;
-    };
-    Wrapper_DialogContent.prototype.checkHost = function (view, componentView, el, throwOnChange) {
-    };
-    Wrapper_DialogContent.prototype.handleEvent = function (eventName, $event) {
+    }
+    checkHost(view, componentView, el, throwOnChange) {
+    }
+    handleEvent(eventName, $event) {
         var result = true;
         return result;
-    };
-    Wrapper_DialogContent.prototype.subscribe = function (view, _eventHandler) {
-        this._eventHandler = _eventHandler;
-    };
-    return Wrapper_DialogContent;
-}());
-var renderType_AppComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
-var View_AppComponent_Host0 = (function (_super) {
-    __extends(View_AppComponent_Host0, _super);
-    function View_AppComponent_Host0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_AppComponent_Host0, renderType_AppComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_AppComponent_Host0.prototype.createInternal = function (rootSelector) {
-        this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer, 'material2-app-app', import3.EMPTY_INLINE_ARRAY, rootSelector, null);
+    subscribe(view, _eventHandler) {
+        this._eventHandler = _eventHandler;
+    }
+}
+var renderType_AppComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
+class View_AppComponent_Host0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_AppComponent_Host0, renderType_AppComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
+        this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer, 'root-app', import3.EMPTY_INLINE_ARRAY, rootSelector, null);
         this.compView_0 = new View_AppComponent0(this.viewUtils, this, 0, this._el_0);
         this._AppComponent_0_3 = new Wrapper_AppComponent(this.injectorGet(import8.MdDialog, this.parentIndex), this.injectorGet(import9.MdSnackBar, this.parentIndex));
         this.compView_0.create(this._AppComponent_0_3.context);
         this.init(this._el_0, (this.renderer.directRenderer ? null : [this._el_0]), null);
         return new import7.ComponentRef_(0, this, this._el_0, this._AppComponent_0_3.context);
-    };
-    View_AppComponent_Host0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import0.AppComponent) && (0 === requestNodeIndex))) {
             return this._AppComponent_0_3.context;
         }
         return notFoundResult;
-    };
-    View_AppComponent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._AppComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
         this.compView_0.detectChanges(throwOnChange);
-    };
-    View_AppComponent_Host0.prototype.destroyInternal = function () {
+    }
+    destroyInternal() {
         this.compView_0.destroy();
-    };
-    View_AppComponent_Host0.prototype.visitRootNodesInternal = function (cb, ctx) {
+    }
+    visitRootNodesInternal(cb, ctx) {
         cb(this._el_0, ctx);
-    };
-    return View_AppComponent_Host0;
-}(import1.AppView));
-export var AppComponentNgFactory = new import7.ComponentFactory('material2-app-app', View_AppComponent_Host0, import0.AppComponent);
-var styles_AppComponent = [import10.styles];
+    }
+}
+export const AppComponentNgFactory = new import7.ComponentFactory('root-app', View_AppComponent_Host0, import0.AppComponent);
+const styles_AppComponent = [import10.styles];
 var renderType_AppComponent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.Emulated, styles_AppComponent, {});
-export var View_AppComponent0 = (function (_super) {
-    __extends(View_AppComponent0, _super);
-    function View_AppComponent0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_AppComponent0, renderType_AppComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+export class View_AppComponent0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_AppComponent0, renderType_AppComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
         this._expr_312 = import6.UNINITIALIZED;
         this._expr_313 = import6.UNINITIALIZED;
         this._expr_314 = import6.UNINITIALIZED;
         this._expr_315 = import6.UNINITIALIZED;
         this._expr_316 = import6.UNINITIALIZED;
     }
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_39_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_39_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_39_4 = [this._MdCheckbox_39_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_39_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_42_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_42_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_42_4 = [this._MdCheckbox_42_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_42_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_45_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_45_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_45_4 = [this._MdCheckbox_45_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_45_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_48_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_48_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_48_4 = [this._MdCheckbox_48_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_48_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_66_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_66_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_66_4 = [this._MdInput_66_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_66_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_68_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_68_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_68_4 = [this._MdInput_68_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_68_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_74_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_74_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_74_4 = [this._MdInput_74_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_74_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(View_AppComponent0.prototype, "_NG_VALUE_ACCESSOR_83_4", {
-        get: function () {
-            if ((this.__NG_VALUE_ACCESSOR_83_4 == null)) {
-                (this.__NG_VALUE_ACCESSOR_83_4 = [this._MdInput_83_3.context]);
-            }
-            return this.__NG_VALUE_ACCESSOR_83_4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    View_AppComponent0.prototype.createInternal = function (rootSelector) {
-        var parentRenderNode = this.renderer.createViewRoot(this.parentElement);
+    get _NG_VALUE_ACCESSOR_39_4() {
+        if ((this.__NG_VALUE_ACCESSOR_39_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_39_4 = [this._MdCheckbox_39_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_39_4;
+    }
+    get _NG_VALUE_ACCESSOR_42_4() {
+        if ((this.__NG_VALUE_ACCESSOR_42_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_42_4 = [this._MdCheckbox_42_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_42_4;
+    }
+    get _NG_VALUE_ACCESSOR_45_4() {
+        if ((this.__NG_VALUE_ACCESSOR_45_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_45_4 = [this._MdCheckbox_45_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_45_4;
+    }
+    get _NG_VALUE_ACCESSOR_48_4() {
+        if ((this.__NG_VALUE_ACCESSOR_48_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_48_4 = [this._MdCheckbox_48_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_48_4;
+    }
+    get _NG_VALUE_ACCESSOR_66_4() {
+        if ((this.__NG_VALUE_ACCESSOR_66_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_66_4 = [this._MdInput_66_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_66_4;
+    }
+    get _NG_VALUE_ACCESSOR_68_4() {
+        if ((this.__NG_VALUE_ACCESSOR_68_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_68_4 = [this._MdInput_68_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_68_4;
+    }
+    get _NG_VALUE_ACCESSOR_74_4() {
+        if ((this.__NG_VALUE_ACCESSOR_74_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_74_4 = [this._MdInput_74_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_74_4;
+    }
+    get _NG_VALUE_ACCESSOR_83_4() {
+        if ((this.__NG_VALUE_ACCESSOR_83_4 == null)) {
+            (this.__NG_VALUE_ACCESSOR_83_4 = [this._MdInput_83_3.context]);
+        }
+        return this.__NG_VALUE_ACCESSOR_83_4;
+    }
+    createInternal(rootSelector) {
+        const parentRenderNode = this.renderer.createViewRoot(this.parentElement);
         this._text_0 = this.renderer.createText(parentRenderNode, '\n', null);
         this._el_1 = import3.createRenderElement(this.renderer, parentRenderNode, 'md-sidenav-layout', import3.EMPTY_INLINE_ARRAY, null);
         this.compView_1 = new import12.View_MdSidenavLayout0(this.viewUtils, this, 1, this._el_1);
@@ -834,8 +792,8 @@ export var View_AppComponent0 = (function (_super) {
             disposable_17
         ]);
         return null;
-    };
-    View_AppComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import11.MdSidenav) && ((3 <= requestNodeIndex) && (requestNodeIndex <= 4)))) {
             return this._MdSidenav_3_3.context;
         }
@@ -1023,15 +981,15 @@ export var View_AppComponent0 = (function (_super) {
             return this._MdButton_179_3.context;
         }
         return notFoundResult;
-    };
-    View_AppComponent0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._MdSidenavLayout_1_3.ngDoCheck(this, this._el_1, throwOnChange);
-        var currVal_3_0_0 = 'side';
+        const currVal_3_0_0 = 'side';
         this._MdSidenav_3_3.check_mode(currVal_3_0_0, throwOnChange, false);
         if (this._MdSidenav_3_3.ngDoCheck(this, this._el_3, throwOnChange)) {
             this.compView_3.markAsCheckOnce();
         }
-        var currVal_6_0_0 = 'primary';
+        const currVal_6_0_0 = 'primary';
         this._MdToolbar_6_3.check_color(currVal_6_0_0, throwOnChange, false);
         if (this._MdToolbar_6_3.ngDoCheck(this, this._el_6, throwOnChange)) {
             this.compView_6.markAsCheckOnce();
@@ -1048,15 +1006,15 @@ export var View_AppComponent0 = (function (_super) {
         if (this._MdButton_27_5.ngDoCheck(this, this._el_27, throwOnChange)) {
             this.compView_27.markAsCheckOnce();
         }
-        var currVal_27_1_0 = 'This is a tooltip!';
+        const currVal_27_1_0 = 'This is a tooltip!';
         this._MdTooltip_27_6.check_message(currVal_27_1_0, throwOnChange, false);
         this._MdTooltip_27_6.ngDoCheck(this, this._el_27, throwOnChange);
-        var currVal_30_0_0 = 'primary';
+        const currVal_30_0_0 = 'primary';
         this._MdButton_30_3.check_color(currVal_30_0_0, throwOnChange, false);
         if (this._MdButton_30_3.ngDoCheck(this, this._el_30, throwOnChange)) {
             this.compView_30.markAsCheckOnce();
         }
-        var currVal_33_0_0 = 'accent';
+        const currVal_33_0_0 = 'accent';
         this._MdButton_33_3.check_color(currVal_33_0_0, throwOnChange, false);
         if (this._MdButton_33_3.ngDoCheck(this, this._el_33, throwOnChange)) {
             this.compView_33.markAsCheckOnce();
@@ -1067,17 +1025,17 @@ export var View_AppComponent0 = (function (_super) {
         if (this._MdCheckbox_39_3.ngDoCheck(this, this._el_39, throwOnChange)) {
             this.compView_39.markAsCheckOnce();
         }
-        var currVal_42_0_0 = true;
+        const currVal_42_0_0 = true;
         this._MdCheckbox_42_3.check_checked(currVal_42_0_0, throwOnChange, false);
         if (this._MdCheckbox_42_3.ngDoCheck(this, this._el_42, throwOnChange)) {
             this.compView_42.markAsCheckOnce();
         }
-        var currVal_45_0_0 = true;
+        const currVal_45_0_0 = true;
         this._MdCheckbox_45_3.check_indeterminate(currVal_45_0_0, throwOnChange, false);
         if (this._MdCheckbox_45_3.ngDoCheck(this, this._el_45, throwOnChange)) {
             this.compView_45.markAsCheckOnce();
         }
-        var currVal_48_0_0 = true;
+        const currVal_48_0_0 = true;
         this._MdCheckbox_48_3.check_disabled(currVal_48_0_0, throwOnChange, false);
         if (this._MdCheckbox_48_3.ngDoCheck(this, this._el_48, throwOnChange)) {
             this.compView_48.markAsCheckOnce();
@@ -1085,41 +1043,41 @@ export var View_AppComponent0 = (function (_super) {
         if (this._MdCard_52_3.ngDoCheck(this, this._el_52, throwOnChange)) {
             this.compView_52.markAsCheckOnce();
         }
-        var currVal_54_0_0 = 'symbol';
+        const currVal_54_0_0 = 'symbol';
         this._MdRadioButton_54_3.check_name(currVal_54_0_0, throwOnChange, false);
         this._MdRadioButton_54_3.ngDoCheck(this, this._el_54, throwOnChange);
-        var currVal_57_0_0 = 'symbol';
+        const currVal_57_0_0 = 'symbol';
         this._MdRadioButton_57_3.check_name(currVal_57_0_0, throwOnChange, false);
         this._MdRadioButton_57_3.ngDoCheck(this, this._el_57, throwOnChange);
-        var currVal_60_0_0 = 'symbol';
+        const currVal_60_0_0 = 'symbol';
         this._MdRadioButton_60_3.check_name(currVal_60_0_0, throwOnChange, false);
-        var currVal_60_0_1 = '';
+        const currVal_60_0_1 = '';
         this._MdRadioButton_60_3.check_disabled(currVal_60_0_1, throwOnChange, false);
         this._MdRadioButton_60_3.ngDoCheck(this, this._el_60, throwOnChange);
         if (this._MdCard_64_3.ngDoCheck(this, this._el_64, throwOnChange)) {
             this.compView_64.markAsCheckOnce();
         }
-        var currVal_66_0_0 = 'First name';
+        const currVal_66_0_0 = 'First name';
         this._MdInput_66_3.check_placeholder(currVal_66_0_0, throwOnChange, false);
         this._MdInput_66_3.ngDoCheck(this, this._el_66, throwOnChange);
-        var currVal_68_0_0 = '50';
+        const currVal_68_0_0 = '50';
         this._MdInput_68_3.check_maxlength(currVal_68_0_0, throwOnChange, false);
-        var currVal_68_0_1 = 'Nickname';
+        const currVal_68_0_1 = 'Nickname';
         this._MdInput_68_3.check_placeholder(currVal_68_0_1, throwOnChange, false);
         this._MdInput_68_3.ngDoCheck(this, this._el_68, throwOnChange);
-        var currVal_70_0_0 = 'end';
+        const currVal_70_0_0 = 'end';
         this._MdHint_70_3.check_align(currVal_70_0_0, throwOnChange, false);
         this._MdHint_70_3.ngDoCheck(this, this._el_70, throwOnChange);
         this._MdInput_74_3.ngDoCheck(this, this._el_74, throwOnChange);
         this._MdPlaceholder_76_3.ngDoCheck(this, this._el_76, throwOnChange);
-        var currVal_83_0_0 = 'Motorcycle model';
+        const currVal_83_0_0 = 'Motorcycle model';
         this._MdInput_83_3.check_placeholder(currVal_83_0_0, throwOnChange, false);
         this._MdInput_83_3.ngDoCheck(this, this._el_83, throwOnChange);
         if (this._MdCard_93_3.ngDoCheck(this, this._el_93, throwOnChange)) {
             this.compView_93.markAsCheckOnce();
         }
         this._MdList_95_3.ngDoCheck(this, this._el_95, throwOnChange);
-        var currVal_97_0_0 = this.context.foods;
+        const currVal_97_0_0 = this.context.foods;
         this._NgFor_97_6.check_ngForOf(currVal_97_0_0, throwOnChange, false);
         this._NgFor_97_6.ngDoCheck(this, this._anchor_97, throwOnChange);
         if (this._MdCard_101_3.ngDoCheck(this, this._el_101, throwOnChange)) {
@@ -1130,14 +1088,14 @@ export var View_AppComponent0 = (function (_super) {
         if (this._MdCard_108_3.ngDoCheck(this, this._el_108, throwOnChange)) {
             this.compView_108.markAsCheckOnce();
         }
-        var currVal_112_0_0 = 'indeterminate';
+        const currVal_112_0_0 = 'indeterminate';
         this._MdProgressBar_112_3.check_mode(currVal_112_0_0, throwOnChange, false);
         if (this._MdProgressBar_112_3.ngDoCheck(this, this._el_112, throwOnChange)) {
             this.compView_112.markAsCheckOnce();
         }
-        var currVal_117_0_0 = this.context.progress;
+        const currVal_117_0_0 = this.context.progress;
         this._MdProgressBar_117_3.check_value(currVal_117_0_0, throwOnChange, false);
-        var currVal_117_0_1 = 'determinate';
+        const currVal_117_0_1 = 'determinate';
         this._MdProgressBar_117_3.check_mode(currVal_117_0_1, throwOnChange, false);
         if (this._MdProgressBar_117_3.ngDoCheck(this, this._el_117, throwOnChange)) {
             this.compView_117.markAsCheckOnce();
@@ -1146,10 +1104,10 @@ export var View_AppComponent0 = (function (_super) {
             this.compView_121.markAsCheckOnce();
         }
         this._MdTabGroup_123_3.ngDoCheck(this, this._el_123, throwOnChange);
-        var currVal_125_0_0 = 'Earth';
+        const currVal_125_0_0 = 'Earth';
         this._MdTab_125_5.check_textLabel(currVal_125_0_0, throwOnChange, false);
         this._MdTab_125_5.ngDoCheck(this, this._el_125, throwOnChange);
-        var currVal_131_0_0 = 'Fire';
+        const currVal_131_0_0 = 'Fire';
         this._MdTab_131_5.check_textLabel(currVal_131_0_0, throwOnChange, false);
         this._MdTab_131_5.ngDoCheck(this, this._el_131, throwOnChange);
         if (this._MdCard_139_3.ngDoCheck(this, this._el_139, throwOnChange)) {
@@ -1164,7 +1122,7 @@ export var View_AppComponent0 = (function (_super) {
         if (this._MdButton_147_5.ngDoCheck(this, this._el_147, throwOnChange)) {
             this.compView_147.markAsCheckOnce();
         }
-        var currVal_147_1_0 = this._MdMenu_151_3.context;
+        const currVal_147_1_0 = this._MdMenu_151_3.context;
         this._MdMenuTrigger_147_6.check_menu(currVal_147_1_0, throwOnChange, false);
         this._MdMenuTrigger_147_6.ngDoCheck(this, this._el_147, throwOnChange);
         this._MdMenu_151_3.ngDoCheck(this, this._el_151, throwOnChange);
@@ -1257,7 +1215,7 @@ export var View_AppComponent0 = (function (_super) {
                 this._MdSidenavLayout_1_3.context.ngAfterContentInit();
             }
         }
-        var currVal_312 = this.context.isDarkTheme;
+        const currVal_312 = this.context.isDarkTheme;
         if (import3.checkBinding(throwOnChange, this._expr_312, currVal_312)) {
             this.renderer.setElementClass(this._el_1, 'm2app-dark', currVal_312);
             this._expr_312 = currVal_312;
@@ -1278,7 +1236,7 @@ export var View_AppComponent0 = (function (_super) {
         this._MdInput_66_3.checkHost(this, this.compView_66, this._el_66, throwOnChange);
         this._MdInput_68_3.checkHost(this, this.compView_68, this._el_68, throwOnChange);
         this._MdHint_70_3.checkHost(this, this, this._el_70, throwOnChange);
-        var currVal_313 = import3.inlineInterpolate(1, '\n          ', this._MdInput_68_3.context.characterCount, ' / 50\n        ');
+        const currVal_313 = import3.inlineInterpolate(1, '\n          ', this._MdInput_68_3.context.characterCount, ' / 50\n        ');
         if (import3.checkBinding(throwOnChange, this._expr_313, currVal_313)) {
             this.renderer.setText(this._text_71, currVal_313);
             this._expr_313 = currVal_313;
@@ -1286,7 +1244,7 @@ export var View_AppComponent0 = (function (_super) {
         this._MdInput_74_3.checkHost(this, this.compView_74, this._el_74, throwOnChange);
         this._MdInput_83_3.checkHost(this, this.compView_83, this._el_83, throwOnChange);
         this._MdProgressBar_112_3.checkHost(this, this.compView_112, this._el_112, throwOnChange);
-        var currVal_314 = import3.inlineInterpolate(1, '\n        Determinate progress bar - ', this.context.progress, '%\n        ');
+        const currVal_314 = import3.inlineInterpolate(1, '\n        Determinate progress bar - ', this.context.progress, '%\n        ');
         if (import3.checkBinding(throwOnChange, this._expr_314, currVal_314)) {
             this.renderer.setText(this._text_116, currVal_314);
             this._expr_314 = currVal_314;
@@ -1296,14 +1254,14 @@ export var View_AppComponent0 = (function (_super) {
         this._MdMenuItem_153_3.checkHost(this, this.compView_153, this._el_153, throwOnChange);
         this._MdMenuItem_156_3.checkHost(this, this.compView_156, this._el_156, throwOnChange);
         this._MdMenuItem_159_3.checkHost(this, this.compView_159, this._el_159, throwOnChange);
-        var currVal_315 = import3.inlineInterpolate(1, 'Last dialog result: ', this.context.lastDialogResult, '');
+        const currVal_315 = import3.inlineInterpolate(1, 'Last dialog result: ', this.context.lastDialogResult, '');
         if (import3.checkBinding(throwOnChange, this._expr_315, currVal_315)) {
             this.renderer.setText(this._text_166, currVal_315);
             this._expr_315 = currVal_315;
         }
         this._MdButton_168_3.checkHost(this, this.compView_168, this._el_168, throwOnChange);
         this._MdButton_171_3.checkHost(this, this.compView_171, this._el_171, throwOnChange);
-        var currVal_316 = this.context.isDarkTheme;
+        const currVal_316 = this.context.isDarkTheme;
         if (import3.checkBinding(throwOnChange, this._expr_316, currVal_316)) {
             this.renderer.setElementClass(this._el_177, 'm2app-dark', currVal_316);
             this._expr_316 = currVal_316;
@@ -1365,8 +1323,8 @@ export var View_AppComponent0 = (function (_super) {
             }
             this._MdIcon_180_3.context.ngAfterViewChecked();
         }
-    };
-    View_AppComponent0.prototype.destroyInternal = function () {
+    }
+    destroyInternal() {
         this._vc_27.destroyNestedViews();
         this._vc_97.destroyNestedViews();
         this._vc_125.destroyNestedViews();
@@ -1439,8 +1397,8 @@ export var View_AppComponent0 = (function (_super) {
         this._MdMenuTrigger_147_6.ngOnDestroy();
         this._MdMenu_151_3.ngOnDestroy();
         this._MdSidenavLayout_1_3.ngOnDestroy();
-    };
-    View_AppComponent0.prototype.visitProjectableNodesInternal = function (nodeIndex, ngContentIndex, cb, ctx) {
+    }
+    visitProjectableNodesInternal(nodeIndex, ngContentIndex, cb, ctx) {
         if (((nodeIndex == 1) && (ngContentIndex == 0))) {
             cb(this._el_3, ctx);
         }
@@ -1662,148 +1620,146 @@ export var View_AppComponent0 = (function (_super) {
         if (((nodeIndex == 180) && (ngContentIndex == 0))) {
             cb(this._text_181, ctx);
         }
-    };
-    View_AppComponent0.prototype.createEmbeddedViewInternal = function (nodeIndex) {
+    }
+    createEmbeddedViewInternal(nodeIndex) {
         if ((nodeIndex == 97)) {
             return new View_AppComponent1(this.viewUtils, this, 97, this._anchor_97, this._vc_97);
         }
         return null;
-    };
-    View_AppComponent0.prototype.handleEvent_3 = function (eventName, $event) {
+    }
+    handleEvent_3(eventName, $event) {
         this.compView_3.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdSidenav_3_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_8 = function (eventName, $event) {
+    }
+    handleEvent_8(eventName, $event) {
         this.markPathToRootAsCheckOnce();
         var result = true;
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this._MdSidenav_3_3.context.toggle() !== false);
+            const pd_sub_0 = (this._MdSidenav_3_3.context.toggle() !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_16 = function (eventName, $event) {
+    }
+    handleEvent_16(eventName, $event) {
         this.compView_16.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_16_3.handleEvent(eventName, $event) && result);
         if ((eventName == 'click')) {
-            var pd_sub_0 = ((this.context.isDarkTheme = !this.context.isDarkTheme) !== false);
+            const pd_sub_0 = ((this.context.isDarkTheme = !this.context.isDarkTheme) !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_24 = function (eventName, $event) {
+    }
+    handleEvent_24(eventName, $event) {
         this.compView_24.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_24_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_27 = function (eventName, $event) {
+    }
+    handleEvent_27(eventName, $event) {
         this.compView_27.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_27_5.handleEvent(eventName, $event) && result);
         result = (this._MdTooltip_27_6.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_30 = function (eventName, $event) {
+    }
+    handleEvent_30(eventName, $event) {
         this.compView_30.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_30_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_33 = function (eventName, $event) {
+    }
+    handleEvent_33(eventName, $event) {
         this.compView_33.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_33_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_66 = function (eventName, $event) {
+    }
+    handleEvent_66(eventName, $event) {
         this.compView_66.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdInput_66_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_68 = function (eventName, $event) {
+    }
+    handleEvent_68(eventName, $event) {
         this.compView_68.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdInput_68_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_74 = function (eventName, $event) {
+    }
+    handleEvent_74(eventName, $event) {
         this.compView_74.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdInput_74_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_83 = function (eventName, $event) {
+    }
+    handleEvent_83(eventName, $event) {
         this.compView_83.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdInput_83_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_147 = function (eventName, $event) {
+    }
+    handleEvent_147(eventName, $event) {
         this.compView_147.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_147_5.handleEvent(eventName, $event) && result);
         result = (this._MdMenuTrigger_147_6.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_153 = function (eventName, $event) {
+    }
+    handleEvent_153(eventName, $event) {
         this.compView_153.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdMenuItem_153_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_156 = function (eventName, $event) {
+    }
+    handleEvent_156(eventName, $event) {
         this.compView_156.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdMenuItem_156_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_159 = function (eventName, $event) {
+    }
+    handleEvent_159(eventName, $event) {
         this.compView_159.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdMenuItem_159_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_168 = function (eventName, $event) {
+    }
+    handleEvent_168(eventName, $event) {
         this.compView_168.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_168_3.handleEvent(eventName, $event) && result);
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this.context.openDialog() !== false);
+            const pd_sub_0 = (this.context.openDialog() !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_171 = function (eventName, $event) {
+    }
+    handleEvent_171(eventName, $event) {
         this.compView_171.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_171_3.handleEvent(eventName, $event) && result);
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this.context.showSnackbar() !== false);
+            const pd_sub_0 = (this.context.showSnackbar() !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    View_AppComponent0.prototype.handleEvent_179 = function (eventName, $event) {
+    }
+    handleEvent_179(eventName, $event) {
         this.compView_179.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_179_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    return View_AppComponent0;
-}(import1.AppView));
-var View_AppComponent1 = (function (_super) {
-    __extends(View_AppComponent1, _super);
-    function View_AppComponent1(viewUtils, parentView, parentIndex, parentElement, declaredViewContainer) {
-        _super.call(this, View_AppComponent1, renderType_AppComponent, import5.ViewType.EMBEDDED, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways, declaredViewContainer);
+    }
+}
+class View_AppComponent1 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement, declaredViewContainer) {
+        super(View_AppComponent1, renderType_AppComponent, import5.ViewType.EMBEDDED, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways, declaredViewContainer);
         this._expr_14 = import6.UNINITIALIZED;
         this._expr_15 = import6.UNINITIALIZED;
     }
-    View_AppComponent1.prototype.createInternal = function (rootSelector) {
+    createInternal(rootSelector) {
         this._el_0 = import3.createRenderElement(this.renderer, null, 'md-list-item', new import3.InlineArray2(2, 'role', 'listitem'), null);
         this.compView_0 = new import29.View_MdListItem0(this.viewUtils, this, 0, this._el_0);
         this._MdListItem_0_3 = new import29.Wrapper_MdListItem(this.renderer, new import47.ElementRef(this._el_0));
@@ -1833,8 +1789,8 @@ var View_AppComponent1 = (function (_super) {
             this._text_7
         ]), [disposable_0]);
         return null;
-    };
-    View_AppComponent1.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import59.MdLine) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 3)))) {
             return this._MdLine_2_3.context;
         }
@@ -1845,8 +1801,8 @@ var View_AppComponent1 = (function (_super) {
             return this._MdListItem_0_3.context;
         }
         return notFoundResult;
-    };
-    View_AppComponent1.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._MdListItem_0_3.ngDoCheck(this, this._el_0, throwOnChange);
         this._MdLine_2_3.ngDoCheck(this, this._el_2, throwOnChange);
         this._MdLine_5_3.ngDoCheck(this, this._el_5, throwOnChange);
@@ -1863,25 +1819,25 @@ var View_AppComponent1 = (function (_super) {
                 this._MdListItem_0_3.context.ngAfterContentInit();
             }
         }
-        var currVal_14 = import3.inlineInterpolate(1, '', this.context.$implicit.name, '');
+        const currVal_14 = import3.inlineInterpolate(1, '', this.context.$implicit.name, '');
         if (import3.checkBinding(throwOnChange, this._expr_14, currVal_14)) {
             this.renderer.setText(this._text_3, currVal_14);
             this._expr_14 = currVal_14;
         }
-        var currVal_15 = import3.inlineInterpolate(1, '', this.context.$implicit.rating, '');
+        const currVal_15 = import3.inlineInterpolate(1, '', this.context.$implicit.rating, '');
         if (import3.checkBinding(throwOnChange, this._expr_15, currVal_15)) {
             this.renderer.setText(this._text_6, currVal_15);
             this._expr_15 = currVal_15;
         }
         this.compView_0.detectChanges(throwOnChange);
-    };
-    View_AppComponent1.prototype.destroyInternal = function () {
+    }
+    destroyInternal() {
         this.compView_0.destroy();
-    };
-    View_AppComponent1.prototype.visitRootNodesInternal = function (cb, ctx) {
+    }
+    visitRootNodesInternal(cb, ctx) {
         cb(this._el_0, ctx);
-    };
-    View_AppComponent1.prototype.visitProjectableNodesInternal = function (nodeIndex, ngContentIndex, cb, ctx) {
+    }
+    visitProjectableNodesInternal(nodeIndex, ngContentIndex, cb, ctx) {
         if (((nodeIndex == 0) && (ngContentIndex == 0))) { }
         if (((nodeIndex == 0) && (ngContentIndex == 1))) {
             cb(this._el_2, ctx);
@@ -1892,57 +1848,53 @@ var View_AppComponent1 = (function (_super) {
             cb(this._text_4, ctx);
             cb(this._text_7, ctx);
         }
-    };
-    View_AppComponent1.prototype.handleEvent_0 = function (eventName, $event) {
+    }
+    handleEvent_0(eventName, $event) {
         this.compView_0.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdListItem_0_3.handleEvent(eventName, $event) && result);
         return result;
-    };
-    return View_AppComponent1;
-}(import1.AppView));
-var renderType_DialogContent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
-var View_DialogContent_Host0 = (function (_super) {
-    __extends(View_DialogContent_Host0, _super);
-    function View_DialogContent_Host0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_DialogContent_Host0, renderType_DialogContent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_DialogContent_Host0.prototype.createInternal = function (rootSelector) {
+}
+var renderType_DialogContent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
+class View_DialogContent_Host0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_DialogContent_Host0, renderType_DialogContent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
         this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer, 'ng-component', import3.EMPTY_INLINE_ARRAY, rootSelector, null);
         this.compView_0 = new View_DialogContent0(this.viewUtils, this, 0, this._el_0);
         this._DialogContent_0_3 = new Wrapper_DialogContent(this.injectorGet(import60.MdDialogRef, this.parentIndex, null));
         this.compView_0.create(this._DialogContent_0_3.context);
         this.init(this._el_0, (this.renderer.directRenderer ? null : [this._el_0]), null);
         return new import7.ComponentRef_(0, this, this._el_0, this._DialogContent_0_3.context);
-    };
-    View_DialogContent_Host0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import0.DialogContent) && (0 === requestNodeIndex))) {
             return this._DialogContent_0_3.context;
         }
         return notFoundResult;
-    };
-    View_DialogContent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._DialogContent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
         this.compView_0.detectChanges(throwOnChange);
-    };
-    View_DialogContent_Host0.prototype.destroyInternal = function () {
-        this.compView_0.destroy();
-    };
-    View_DialogContent_Host0.prototype.visitRootNodesInternal = function (cb, ctx) {
-        cb(this._el_0, ctx);
-    };
-    return View_DialogContent_Host0;
-}(import1.AppView));
-export var DialogContentNgFactory = new import7.ComponentFactory('ng-component', View_DialogContent_Host0, import0.DialogContent);
-var styles_DialogContent = [];
-var renderType_DialogContent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, styles_DialogContent, {});
-export var View_DialogContent0 = (function (_super) {
-    __extends(View_DialogContent0, _super);
-    function View_DialogContent0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_DialogContent0, renderType_DialogContent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_DialogContent0.prototype.createInternal = function (rootSelector) {
-        var parentRenderNode = this.renderer.createViewRoot(this.parentElement);
+    destroyInternal() {
+        this.compView_0.destroy();
+    }
+    visitRootNodesInternal(cb, ctx) {
+        cb(this._el_0, ctx);
+    }
+}
+export const DialogContentNgFactory = new import7.ComponentFactory('ng-component', View_DialogContent_Host0, import0.DialogContent);
+const styles_DialogContent = [];
+var renderType_DialogContent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, styles_DialogContent, {});
+export class View_DialogContent0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_DialogContent0, renderType_DialogContent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
+        const parentRenderNode = this.renderer.createViewRoot(this.parentElement);
         this._text_0 = this.renderer.createText(parentRenderNode, '\n    ', null);
         this._el_1 = import3.createRenderElement(this.renderer, parentRenderNode, 'p', import3.EMPTY_INLINE_ARRAY, null);
         this._text_2 = this.renderer.createText(this._el_1, 'This is a dialog', null);
@@ -1986,38 +1938,37 @@ export var View_DialogContent0 = (function (_super) {
             this._text_17
         ]), [disposable_0]);
         return null;
-    };
-    View_DialogContent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import16.MdButton) && ((14 <= requestNodeIndex) && (requestNodeIndex <= 15)))) {
             return this._MdButton_14_3.context;
         }
         return notFoundResult;
-    };
-    View_DialogContent0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         if (this._MdButton_14_3.ngDoCheck(this, this._el_14, throwOnChange)) {
             this.compView_14.markAsCheckOnce();
         }
         this._MdButton_14_3.checkHost(this, this.compView_14, this._el_14, throwOnChange);
         this.compView_14.detectChanges(throwOnChange);
-    };
-    View_DialogContent0.prototype.destroyInternal = function () {
+    }
+    destroyInternal() {
         this.compView_14.destroy();
-    };
-    View_DialogContent0.prototype.visitProjectableNodesInternal = function (nodeIndex, ngContentIndex, cb, ctx) {
+    }
+    visitProjectableNodesInternal(nodeIndex, ngContentIndex, cb, ctx) {
         if (((nodeIndex == 14) && (ngContentIndex == 0))) {
             cb(this._text_15, ctx);
         }
-    };
-    View_DialogContent0.prototype.handleEvent_14 = function (eventName, $event) {
+    }
+    handleEvent_14(eventName, $event) {
         this.compView_14.markPathToRootAsCheckOnce();
         var result = true;
         result = (this._MdButton_14_3.handleEvent(eventName, $event) && result);
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this.context.dialogRef.close(this._el_8.value) !== false);
+            const pd_sub_0 = (this.context.dialogRef.close(this._el_8.value) !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    return View_DialogContent0;
-}(import1.AppView));
+    }
+}
 //# sourceMappingURL=app.component.ngfactory.js.map

@@ -9,31 +9,28 @@ import { AuthService } from "./auth/auth.service";
 import { AuthComponent } from './auth/auth.component';
 import { ErrorComponent } from './error/error.component';
 import { ErrorService } from './error/error.service';
-export var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule.decorators = [
-        { type: NgModule, args: [{
-                    declarations: [
-                        AppComponent,
-                        AuthComponent,
-                        // HeaderComponent,
-                        ErrorComponent,
-                        AppComponent,
-                        DialogContent
-                    ],
-                    imports: [
-                        BrowserModule,
-                        FormsModule,
-                        MaterialModule.forRoot(),
-                        HttpModule
-                    ],
-                    providers: [AuthService, ErrorService],
-                    bootstrap: [AppComponent]
-                },] },
-    ];
-    /** @nocollapse */
-    AppModule.ctorParameters = [];
-    return AppModule;
-}());
+export class AppModule {
+}
+AppModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [
+                    AppComponent,
+                    AuthComponent,
+                    // HeaderComponent,
+                    ErrorComponent,
+                    AppComponent,
+                    DialogContent
+                ],
+                imports: [
+                    BrowserModule,
+                    FormsModule,
+                    MaterialModule.forRoot(),
+                    HttpModule
+                ],
+                providers: [AuthService, ErrorService],
+                bootstrap: [AppComponent]
+            },] },
+];
+/** @nocollapse */
+AppModule.ctorParameters = [];
 //# sourceMappingURL=app.module.js.map

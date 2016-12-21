@@ -4,11 +4,6 @@
  * @suppress {suspiciousCode,uselessCode,missingProperties}
  */
 /* tslint:disable */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 import * as import0 from './error.component';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import3 from '@angular/core/src/linker/view_utils';
@@ -21,16 +16,16 @@ import * as import9 from '../../../../node_modules/@angular/common/src/directive
 import * as import10 from '@angular/core/src/change_detection/differs/keyvalue_differs';
 import * as import11 from '@angular/core/src/linker/element_ref';
 import * as import12 from '@angular/common/src/directives/ng_style';
-export var Wrapper_ErrorComponent = (function () {
-    function Wrapper_ErrorComponent(p0) {
+export class Wrapper_ErrorComponent {
+    constructor(p0) {
         this._changed = false;
         this.context = new import0.ErrorComponent(p0);
     }
-    Wrapper_ErrorComponent.prototype.ngOnDetach = function (view, componentView, el) {
-    };
-    Wrapper_ErrorComponent.prototype.ngOnDestroy = function () {
-    };
-    Wrapper_ErrorComponent.prototype.ngDoCheck = function (view, el, throwOnChange) {
+    ngOnDetach(view, componentView, el) {
+    }
+    ngOnDestroy() {
+    }
+    ngDoCheck(view, el, throwOnChange) {
         var changed = this._changed;
         this._changed = false;
         if (!throwOnChange) {
@@ -39,68 +34,64 @@ export var Wrapper_ErrorComponent = (function () {
             }
         }
         return changed;
-    };
-    Wrapper_ErrorComponent.prototype.checkHost = function (view, componentView, el, throwOnChange) {
-    };
-    Wrapper_ErrorComponent.prototype.handleEvent = function (eventName, $event) {
+    }
+    checkHost(view, componentView, el, throwOnChange) {
+    }
+    handleEvent(eventName, $event) {
         var result = true;
         return result;
-    };
-    Wrapper_ErrorComponent.prototype.subscribe = function (view, _eventHandler) {
-        this._eventHandler = _eventHandler;
-    };
-    return Wrapper_ErrorComponent;
-}());
-var renderType_ErrorComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
-var View_ErrorComponent_Host0 = (function (_super) {
-    __extends(View_ErrorComponent_Host0, _super);
-    function View_ErrorComponent_Host0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_ErrorComponent_Host0, renderType_ErrorComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
     }
-    View_ErrorComponent_Host0.prototype.createInternal = function (rootSelector) {
+    subscribe(view, _eventHandler) {
+        this._eventHandler = _eventHandler;
+    }
+}
+var renderType_ErrorComponent_Host = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.None, [], {});
+class View_ErrorComponent_Host0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_ErrorComponent_Host0, renderType_ErrorComponent_Host, import5.ViewType.HOST, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+    }
+    createInternal(rootSelector) {
         this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer, 'app-error', import3.EMPTY_INLINE_ARRAY, rootSelector, null);
         this.compView_0 = new View_ErrorComponent0(this.viewUtils, this, 0, this._el_0);
         this._ErrorComponent_0_3 = new Wrapper_ErrorComponent(this.injectorGet(import8.ErrorService, this.parentIndex));
         this.compView_0.create(this._ErrorComponent_0_3.context);
         this.init(this._el_0, (this.renderer.directRenderer ? null : [this._el_0]), null);
         return new import7.ComponentRef_(0, this, this._el_0, this._ErrorComponent_0_3.context);
-    };
-    View_ErrorComponent_Host0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import0.ErrorComponent) && (0 === requestNodeIndex))) {
             return this._ErrorComponent_0_3.context;
         }
         return notFoundResult;
-    };
-    View_ErrorComponent_Host0.prototype.detectChangesInternal = function (throwOnChange) {
+    }
+    detectChangesInternal(throwOnChange) {
         this._ErrorComponent_0_3.ngDoCheck(this, this._el_0, throwOnChange);
         this.compView_0.detectChanges(throwOnChange);
-    };
-    View_ErrorComponent_Host0.prototype.destroyInternal = function () {
+    }
+    destroyInternal() {
         this.compView_0.destroy();
-    };
-    View_ErrorComponent_Host0.prototype.visitRootNodesInternal = function (cb, ctx) {
+    }
+    visitRootNodesInternal(cb, ctx) {
         cb(this._el_0, ctx);
-    };
-    return View_ErrorComponent_Host0;
-}(import1.AppView));
-export var ErrorComponentNgFactory = new import7.ComponentFactory('app-error', View_ErrorComponent_Host0, import0.ErrorComponent);
-var styles_ErrorComponent = ['./error.component.css'];
+    }
+}
+export const ErrorComponentNgFactory = new import7.ComponentFactory('app-error', View_ErrorComponent_Host0, import0.ErrorComponent);
+const styles_ErrorComponent = ['./error.component.css'];
 var renderType_ErrorComponent = import3.createRenderComponentType('', 0, import4.ViewEncapsulation.Emulated, styles_ErrorComponent, {});
-export var View_ErrorComponent0 = (function (_super) {
-    __extends(View_ErrorComponent0, _super);
-    function View_ErrorComponent0(viewUtils, parentView, parentIndex, parentElement) {
-        _super.call(this, View_ErrorComponent0, renderType_ErrorComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
-        this._map_37 = import3.pureProxy1(function (p0) {
+export class View_ErrorComponent0 extends import1.AppView {
+    constructor(viewUtils, parentView, parentIndex, parentElement) {
+        super(View_ErrorComponent0, renderType_ErrorComponent, import5.ViewType.COMPONENT, viewUtils, parentView, parentIndex, parentElement, import6.ChangeDetectorStatus.CheckAlways);
+        this._map_37 = import3.pureProxy1((p0) => {
             return { display: p0 };
         });
-        this._map_38 = import3.pureProxy1(function (p0) {
+        this._map_38 = import3.pureProxy1((p0) => {
             return { display: p0 };
         });
         this._expr_39 = import6.UNINITIALIZED;
         this._expr_40 = import6.UNINITIALIZED;
     }
-    View_ErrorComponent0.prototype.createInternal = function (rootSelector) {
-        var parentRenderNode = this.renderer.createViewRoot(this.parentElement);
+    createInternal(rootSelector) {
+        const parentRenderNode = this.renderer.createViewRoot(this.parentElement);
         this._el_0 = import3.createRenderElement(this.renderer, parentRenderNode, 'div', new import3.InlineArray4(4, 'class', 'backdrop', 'style', 'position: fixed'), null);
         this._NgStyle_0_3 = new import9.Wrapper_NgStyle(this.parentView.injectorGet(import10.KeyValueDiffers, this.parentIndex), new import11.ElementRef(this._el_0), this.renderer);
         this._text_1 = this.renderer.createText(parentRenderNode, '\n', null);
@@ -181,8 +172,8 @@ export var View_ErrorComponent0 = (function (_super) {
             disposable_1
         ]);
         return null;
-    };
-    View_ErrorComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
+    }
+    injectorGetInternal(token, requestNodeIndex, notFoundResult) {
         if (((token === import12.NgStyle) && (0 === requestNodeIndex))) {
             return this._NgStyle_0_3.context;
         }
@@ -190,43 +181,42 @@ export var View_ErrorComponent0 = (function (_super) {
             return this._NgStyle_2_3.context;
         }
         return notFoundResult;
-    };
-    View_ErrorComponent0.prototype.detectChangesInternal = function (throwOnChange) {
-        var currVal_0_0_0 = this._map_37(this.context.display);
+    }
+    detectChangesInternal(throwOnChange) {
+        const currVal_0_0_0 = this._map_37(this.context.display);
         this._NgStyle_0_3.check_ngStyle(currVal_0_0_0, throwOnChange, false);
         this._NgStyle_0_3.ngDoCheck(this, this._el_0, throwOnChange);
-        var currVal_2_0_0 = this._map_38(this.context.display);
+        const currVal_2_0_0 = this._map_38(this.context.display);
         this._NgStyle_2_3.check_ngStyle(currVal_2_0_0, throwOnChange, false);
         this._NgStyle_2_3.ngDoCheck(this, this._el_2, throwOnChange);
-        var currVal_39 = import3.inlineInterpolate(1, '', ((this.context.error == null) ? null : this.context.error.title), '');
+        const currVal_39 = import3.inlineInterpolate(1, '', ((this.context.error == null) ? null : this.context.error.title), '');
         if (import3.checkBinding(throwOnChange, this._expr_39, currVal_39)) {
             this.renderer.setText(this._text_17, currVal_39);
             this._expr_39 = currVal_39;
         }
-        var currVal_40 = import3.inlineInterpolate(1, '', ((this.context.error == null) ? null : this.context.error.message), '');
+        const currVal_40 = import3.inlineInterpolate(1, '', ((this.context.error == null) ? null : this.context.error.message), '');
         if (import3.checkBinding(throwOnChange, this._expr_40, currVal_40)) {
             this.renderer.setText(this._text_23, currVal_40);
             this._expr_40 = currVal_40;
         }
-    };
-    View_ErrorComponent0.prototype.handleEvent_10 = function (eventName, $event) {
+    }
+    handleEvent_10(eventName, $event) {
         this.markPathToRootAsCheckOnce();
         var result = true;
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this.context.onErrorHandled() !== false);
+            const pd_sub_0 = (this.context.onErrorHandled() !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    View_ErrorComponent0.prototype.handleEvent_28 = function (eventName, $event) {
+    }
+    handleEvent_28(eventName, $event) {
         this.markPathToRootAsCheckOnce();
         var result = true;
         if ((eventName == 'click')) {
-            var pd_sub_0 = (this.context.onErrorHandled() !== false);
+            const pd_sub_0 = (this.context.onErrorHandled() !== false);
             result = (pd_sub_0 && result);
         }
         return result;
-    };
-    return View_ErrorComponent0;
-}(import1.AppView));
+    }
+}
 //# sourceMappingURL=error.component.ngfactory.js.map

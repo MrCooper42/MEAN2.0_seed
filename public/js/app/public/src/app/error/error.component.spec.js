@@ -1,20 +1,20 @@
 import { async, TestBed } from '@angular/core/testing';
 import { ErrorComponent } from './error.component';
-describe('ErrorComponent', function () {
-    var component;
-    var fixture;
-    beforeEach(async(function () {
+describe('ErrorComponent', () => {
+    let component;
+    let fixture;
+    beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ErrorComponent]
         })
             .compileComponents();
     }));
-    beforeEach(function () {
+    beforeEach(() => {
         fixture = TestBed.createComponent(ErrorComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
-    it('should create', function () {
+    it('should create', () => {
         expect(component).toBeTruthy();
     });
 });

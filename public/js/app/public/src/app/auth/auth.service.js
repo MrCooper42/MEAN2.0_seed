@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-export var AuthService = (function () {
-    function AuthService() {
+export class AuthService {
+    constructor() {
     }
-    AuthService.decorators = [
-        { type: Injectable },
-    ];
-    /** @nocollapse */
-    AuthService.ctorParameters = [];
-    return AuthService;
-}());
+}
+AuthService.decorators = [
+    { type: Injectable },
+];
+/** @nocollapse */
+AuthService.ctorParameters = [];
 //# sourceMappingURL=auth.service.js.map

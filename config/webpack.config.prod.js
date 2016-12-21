@@ -1,8 +1,9 @@
-var webpack = require('webpack');
-var webpackMerge = require('webpack-merge');
-var CompressionPlugin = require('compression-webpack-plugin');
-var CommonChunkPlugin = webpack.optimize.CommonChunkPlugin;
-var commonConfig = require('./webpack.config.common.js');
+const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
+// const AotPlugin = require('@ngtools/webpack').AotPlugin;
+// const CompressionPlugin = require('compression-webpack-plugin');
+// const CommonChunkPlugin = webpack.optimize.CommonChunkPlugin;
+const commonConfig = require('./webpack.config.common.js');
 
 module.exports = webpackMerge.smart(commonConfig, {
   entry: {
@@ -18,18 +19,30 @@ module.exports = webpackMerge.smart(commonConfig, {
   },
 
   module: {
-    loaders: [
-      {
-        test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader?aot=true&genDir=public/js/app']
-      }
-    ]
+    loaders: [{
+      test: /\.ts$/,
+      loader: ['@ngtools/webpack']
+    }]
   },
 
   plugins: [
-      new webpack.NoErrorsPlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-          sourceMap: false
-      })
+    // new AotPlugin({
+    //   tsConfigPath: './tsconfig.aot.json',
+    //   entryModule: './public/src/app/app.module#AppModule'
+    // }),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false
+      // beautify: false,
+      // mangle: {
+      //   screw_ie8: true,
+      //   keep_fnames: true
+      // },
+      // compress: {
+      //   warnings: false,
+      //   screw_ie8: true
+      // },
+      // comments: false
+    })
   ]
 });

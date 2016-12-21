@@ -1,8 +1,7 @@
 import { Component, Optional } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
-export var AppComponent = (function () {
-    function AppComponent(_dialog, _snackbar) {
-        var _this = this;
+export class AppComponent {
+    constructor(_dialog, _snackbar) {
         this._dialog = _dialog;
         this._snackbar = _snackbar;
         this.isDarkTheme = false;
@@ -13,47 +12,53 @@ export var AppComponent = (function () {
         ];
         this.progress = 0;
         // Update the value for the progress-bar on an interval.
-        setInterval(function () {
-            _this.progress = (_this.progress + Math.floor(Math.random() * 4) + 1) % 100;
+        setInterval(() => {
+            this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
         }, 200);
     }
-    AppComponent.prototype.openDialog = function () {
-        var _this = this;
-        var dialogRef = this._dialog.open(DialogContent);
-        dialogRef.afterClosed().subscribe(function (result) {
-            _this.lastDialogResult = result;
+    openDialog() {
+        let dialogRef = this._dialog.open(DialogContent);
+        dialogRef.afterClosed().subscribe(result => {
+            this.lastDialogResult = result;
         });
-    };
-    AppComponent.prototype.showSnackbar = function () {
+    }
+    showSnackbar() {
         this._snackbar.open('YUM SNACKS', 'CHEW');
-    };
-    AppComponent.decorators = [
-        { type: Component, args: [{
-                    selector: 'material2-app-app',
-                    templateUrl: 'app.component.html',
-                    styleUrls: ['app.component.css'],
-                },] },
-    ];
-    /** @nocollapse */
-    AppComponent.ctorParameters = [
-        { type: MdDialog, },
-        { type: MdSnackBar, },
-    ];
-    return AppComponent;
-}());
-export var DialogContent = (function () {
-    function DialogContent(dialogRef) {
+    }
+}
+AppComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'root-app',
+                templateUrl: 'app.component.html',
+                styleUrls: ['app.component.css'],
+            },] },
+];
+/** @nocollapse */
+AppComponent.ctorParameters = [
+    { type: MdDialog, },
+    { type: MdSnackBar, },
+];
+export class DialogContent {
+    constructor(dialogRef) {
         this.dialogRef = dialogRef;
     }
-    DialogContent.decorators = [
-        { type: Component, args: [{
-                    template: "\n    <p>This is a dialog</p>\n    <p>\n      <label>\n        This is a text box inside of a dialog.\n        <input #dialogInput>\n      </label>\n    </p>\n    <p> <button md-button (click)=\"dialogRef.close(dialogInput.value)\">CLOSE</button> </p>\n  ",
-                },] },
-    ];
-    /** @nocollapse */
-    DialogContent.ctorParameters = [
-        { type: MdDialogRef, decorators: [{ type: Optional },] },
-    ];
-    return DialogContent;
-}());
+}
+DialogContent.decorators = [
+    { type: Component, args: [{
+                template: `
+    <p>This is a dialog</p>
+    <p>
+      <label>
+        This is a text box inside of a dialog.
+        <input #dialogInput>
+      </label>
+    </p>
+    <p> <button md-button (click)="dialogRef.close(dialogInput.value)">CLOSE</button> </p>
+  `,
+            },] },
+];
+/** @nocollapse */
+DialogContent.ctorParameters = [
+    { type: MdDialogRef, decorators: [{ type: Optional },] },
+];
 //# sourceMappingURL=app.component.js.map
