@@ -18,12 +18,14 @@ module.exports = webpackMerge.smart(commonConfig, {
     chunkFilename: '[id].[hash].chunk.js'
   },
 
-  module: {
-    loaders: [{
-      test: /\.ts$/,
-      loader: ['@ngtools/webpack']
-    }]
-  },
+  // module: {
+  //   loaders: [{
+  //     test: /\.ts$/,
+  //     loader: [
+  //       'awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader'
+  //     ]
+  //   }]
+  // },
 
   plugins: [
     // new AotPlugin({

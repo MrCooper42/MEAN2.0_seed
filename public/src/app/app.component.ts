@@ -1,11 +1,12 @@
-import {Component, Optional} from '@angular/core';
+import {Component, Optional, ViewEncapsulation} from '@angular/core';
 import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 
 
 @Component({
   selector: 'root-app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  styleUrls: ['../material-app-theme.scss', './app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   isDarkTheme: boolean = false;

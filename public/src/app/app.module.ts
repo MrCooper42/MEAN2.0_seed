@@ -26,9 +26,10 @@ import { ErrorService } from './error/error.service';
   imports: [
     BrowserModule,
     FormsModule,
-    MaterialModule.forRoot(),
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot()
   ],
+  entryComponents: [DialogContent],
   providers: [AuthService, ErrorService],
   bootstrap: [AppComponent]
 })
