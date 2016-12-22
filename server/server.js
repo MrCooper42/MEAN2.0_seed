@@ -9,9 +9,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const appRoutes = require('./routes/app');
+const authRoutes = require('./routes/auth');
+const messageRoutes = require('./routes/messages');
 
 const app = express();
-// mongoose.connect(`mongodb://localhost:27017/cwdrf`);
+mongoose.connect(`mongodb://localhost:27017/mean2-test`);
 
 // view engine setup
 app.set('views', path.join(__dirname, '../public/views'));
@@ -34,6 +36,8 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use('/message', messageRoutes);
+app.use('/auth', authRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler

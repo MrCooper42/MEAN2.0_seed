@@ -5,7 +5,7 @@
  */
  /* tslint:disable */
 
-import * as import0 from './auth.component';
+import * as import0 from './job-listings.component';
 import * as import1 from '@angular/core/src/linker/view';
 import * as import2 from '@angular/core/src/render/api';
 import * as import3 from '@angular/core/src/linker/view_utils';
@@ -13,14 +13,14 @@ import * as import4 from '@angular/core/src/metadata/view';
 import * as import5 from '@angular/core/src/linker/view_type';
 import * as import6 from '@angular/core/src/change_detection/change_detection';
 import * as import7 from '@angular/core/src/linker/component_factory';
-import * as import8 from './auth.component.css.shim';
-export class Wrapper_AuthComponent {
+import * as import8 from './job-listings.component.css.shim';
+export class Wrapper_JobListingsComponent {
   /*private*/ _eventHandler:Function;
-  context:import0.AuthComponent;
+  context:import0.JobListingsComponent;
   /*private*/ _changed:boolean;
   constructor() {
     this._changed = false;
-    this.context = new import0.AuthComponent();
+    this.context = new import0.JobListingsComponent();
   }
   ngOnDetach(view:import1.AppView<any>,componentView:import1.AppView<any>,el:any):void {
   }
@@ -42,28 +42,28 @@ export class Wrapper_AuthComponent {
     this._eventHandler = _eventHandler;
   }
 }
-var renderType_AuthComponent_Host:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.None,([] as any[]),{});
-class View_AuthComponent_Host0 extends import1.AppView<any> {
+var renderType_JobListingsComponent_Host:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.None,([] as any[]),{});
+class View_JobListingsComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
-  compView_0:import1.AppView<import0.AuthComponent>;
-  _AuthComponent_0_3:Wrapper_AuthComponent;
+  compView_0:import1.AppView<import0.JobListingsComponent>;
+  _JobListingsComponent_0_3:Wrapper_JobListingsComponent;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_AuthComponent_Host0,renderType_AuthComponent_Host,import5.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
+    super(View_JobListingsComponent_Host0,renderType_JobListingsComponent_Host,import5.ViewType.HOST,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
-    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'app-auth',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
-    this.compView_0 = new View_AuthComponent0(this.viewUtils,this,0,this._el_0);
-    this._AuthComponent_0_3 = new Wrapper_AuthComponent();
-    this.compView_0.create(this._AuthComponent_0_3.context);
+    this._el_0 = import3.selectOrCreateRenderHostElement(this.renderer,'app-job-listings',import3.EMPTY_INLINE_ARRAY,rootSelector,(null as any));
+    this.compView_0 = new View_JobListingsComponent0(this.viewUtils,this,0,this._el_0);
+    this._JobListingsComponent_0_3 = new Wrapper_JobListingsComponent();
+    this.compView_0.create(this._JobListingsComponent_0_3.context);
     this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [this._el_0]),(null as any));
-    return new import7.ComponentRef_<any>(0,this,this._el_0,this._AuthComponent_0_3.context);
+    return new import7.ComponentRef_<any>(0,this,this._el_0,this._JobListingsComponent_0_3.context);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import0.AuthComponent) && (0 === requestNodeIndex))) { return this._AuthComponent_0_3.context; }
+    if (((token === import0.JobListingsComponent) && (0 === requestNodeIndex))) { return this._JobListingsComponent_0_3.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    this._AuthComponent_0_3.ngDoCheck(this,this._el_0,throwOnChange);
+    this._JobListingsComponent_0_3.ngDoCheck(this,this._el_0,throwOnChange);
     this.compView_0.detectChanges(throwOnChange);
   }
   destroyInternal():void {
@@ -73,20 +73,20 @@ class View_AuthComponent_Host0 extends import1.AppView<any> {
     cb(this._el_0,ctx);
   }
 }
-export const AuthComponentNgFactory:import7.ComponentFactory<import0.AuthComponent> = new import7.ComponentFactory<import0.AuthComponent>('app-auth',View_AuthComponent_Host0,import0.AuthComponent);
-const styles_AuthComponent:any[] = [import8.styles];
-var renderType_AuthComponent:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.Emulated,styles_AuthComponent,{});
-export class View_AuthComponent0 extends import1.AppView<import0.AuthComponent> {
+export const JobListingsComponentNgFactory:import7.ComponentFactory<import0.JobListingsComponent> = new import7.ComponentFactory<import0.JobListingsComponent>('app-job-listings',View_JobListingsComponent_Host0,import0.JobListingsComponent);
+const styles_JobListingsComponent:any[] = [import8.styles];
+var renderType_JobListingsComponent:import2.RenderComponentType = import3.createRenderComponentType('',0,import4.ViewEncapsulation.Emulated,styles_JobListingsComponent,{});
+export class View_JobListingsComponent0 extends import1.AppView<import0.JobListingsComponent> {
   _el_0:any;
   _text_1:any;
   _text_2:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
-    super(View_AuthComponent0,renderType_AuthComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
+    super(View_JobListingsComponent0,renderType_JobListingsComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
     const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
     this._el_0 = import3.createRenderElement(this.renderer,parentRenderNode,'p',import3.EMPTY_INLINE_ARRAY,(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'\n  auth works!\n',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n  job-listings works!\n',(null as any));
     this._text_2 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [
       this._el_0,

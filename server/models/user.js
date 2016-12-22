@@ -6,33 +6,65 @@ const Schema = mongoose.Schema;
 // const passportLocalMongoose = require('passport-local-mongoose');
 
 const schema = new Schema({
-    local: {
-        firstName: {
-            type: String,
-            required: true
-        },
-        lastName: {
-            type: String
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        email: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        created: {
-            type: Date,
-            default: Date.now
-        }
+  isAdmin: {
+    type: Boolean,
+    default: false,
+    required: true
+  },
+  local: {
+    firstName: {
+      type: String,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    lastName: {
+      type: String
+    },
+    userName: {
+      type: String
+    },
+    password: {
+      type: String,
       required: true
     },
+    email: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    created: {
+      type: Date,
+      default: Date.now
+    }
+  },
+  facebook: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  },
+  linkedin: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  },
+  twitter: {
+    id: String,
+    token: String,
+    displayName: String,
+    username: String
+  },
+  google: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  },
+  steam: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  }
 });
 
 // schema.plugin(passportLocalMongoose)
@@ -43,7 +75,7 @@ schema.methods.generateHash = password => bcrypt.hashSync(password, bcrypt.genSa
 // check password
 
 schema.methods.validatePassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
+  return bcrypt.compareSync(password, this.local.password);
 }
 
 module.exports = mongoose.model('User', schema);

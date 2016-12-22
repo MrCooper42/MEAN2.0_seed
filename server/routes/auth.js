@@ -1,7 +1,7 @@
 'use strict'
 
 const express = require('express');
-// const passport = require('passport');
+const passport = require('passport');
 const User = require('../models/user');
 const router = express.Router();
 
@@ -50,5 +50,17 @@ module.exports = function(app, passport) {
     router.get('/ping', function(req, res) {
         res.status(200).send("pong!");
     });
+    //start social accounts
+
+    // app.get('/auth/facebook', passport.authenticate('facebook')); //,{scope: 'email'}
+    //
+    // app.get('auth/facebook/callback',
+    //   passport.authenticate('facebook', {
+    //     successRedirect: '/profile',
+    //     failureRedirect: '/'
+    //   }))// make sure to change all the redirects
+
+
+    //end social accounts
     return router
 }

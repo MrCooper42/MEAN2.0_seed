@@ -1,35 +1,46 @@
-import 'hammerjs';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import {AppComponent, DialogContent} from './app.component';
-// import { HeaderComponent } from "./shared/header.component";
+import {AppComponent} from './app.component';
+
+import { routing } from "./app.routing";
+import { HeaderComponent } from "./shared/header.component";
 import { AuthService } from "./auth/auth.service";
-import { AuthComponent } from './auth/auth.component';
-import { ErrorComponent } from './error/error.component';
-import { ErrorService } from './error/error.service';
+import { AuthenticationComponent } from "./auth/authentication.component";
+import { ErrorComponent } from './errors/error.component';
+import { ErrorService } from './errors/error.service';
+import { ProfileComponent } from './profile/profile.component';
+import { NewsComponent } from './news/news.component';
+import { GamesComponent } from './games/games.component';
+import { JobListingsComponent } from './job-listings/job-listings.component';
+import { FilesComponent } from './files/files.component';
+import { MessageModule } from "./messages/message.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
-    // HeaderComponent,
+    AuthenticationComponent,
+    HeaderComponent,
     ErrorComponent,
     AppComponent,
-    DialogContent
+    ProfileComponent,
+    NewsComponent,
+    GamesComponent,
+    JobListingsComponent,
+    FilesComponent
   ],
   imports: [
+    NgbModule.forRoot(),
+    routing,
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MessageModule
   ],
-  entryComponents: [DialogContent],
   providers: [AuthService, ErrorService],
   bootstrap: [AppComponent]
 })
