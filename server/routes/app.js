@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
-const auth = require('./auth')
+const user = require('./user'); //remove me
 const blog = require('./blog');
 const comment = require('./comment');
 
@@ -11,7 +11,7 @@ router.get('/', (req, res, next) =>{
   res.render('index');
 });
 
-router.use('/auth', auth)
+router.use('/user', user)
 router.use('/blog', blog)
 router.use('/comment', comment)
 
