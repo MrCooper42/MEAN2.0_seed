@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Message } from './message.model';
-import { MessageService } from './message.service'
+import { MessageService } from './message.service';
 
 @Component({
     selector: 'app-message',
@@ -23,7 +23,7 @@ import { MessageService } from './message.service'
 })
 
 export class MessageComponent {
-    @Input('inputMessage') message: Message; //using input message as alias in app.component
+    @Input('inputMessage') message: Message; // using input message as alias in app.component, let there be linting issues
 
     color = 'red';
 

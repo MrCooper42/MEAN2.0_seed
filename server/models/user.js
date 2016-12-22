@@ -70,12 +70,13 @@ const schema = new Schema({
 // schema.plugin(passportLocalMongoose)
 
 // hash password
-schema.methods.generateHash = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+schema.methods.generateHash = password => {
+  console.log(password);
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+}
 
 // check password
 
-schema.methods.validatePassword = function(password) {
-  return bcrypt.compareSync(password, this.local.password);
-}
+schema.methods.validatePassword = password => bcrypt.compareSync(password, this.local.password);
 
 module.exports = mongoose.model('User', schema);

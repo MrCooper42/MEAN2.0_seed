@@ -1,10 +1,10 @@
-import { Http, Response, Headers } from "@angular/http";
-import { Injectable, EventEmitter } from "@angular/core";
+import { Http, Response, Headers } from '@angular/http';
+import { Injectable, EventEmitter } from '@angular/core';
 import 'rxjs/Rx';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
-import { Message } from "./message.model";
-import { ErrorService } from "../errors/error.service";
+import { Message } from './message.model';
+import { ErrorService } from '../errors/error.service';
 
 @Injectable()
 
@@ -32,7 +32,7 @@ export class MessageService {
             })
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
-                return Observable.throw(error.json())
+                return Observable.throw(error.json());
             });
 
     }
@@ -55,7 +55,7 @@ export class MessageService {
             })
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
-                return Observable.throw(error.json())
+                return Observable.throw(error.json());
             });
     }
 
@@ -72,7 +72,7 @@ export class MessageService {
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
-                return Observable.throw(error.json())
+                return Observable.throw(error.json());
             });
     }
 
@@ -84,7 +84,7 @@ export class MessageService {
             .map((response: Response) => response.json())
             .catch((error: Response) => {
                 this.errorService.handleError(error.json());
-                return Observable.throw(error.json())
+                return Observable.throw(error.json());
             });
     }
 }

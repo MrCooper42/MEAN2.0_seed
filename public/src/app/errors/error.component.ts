@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { Error } from "./error.model";
-import { ErrorService } from "./error.service";
+import { Error } from './error.model';
+import { ErrorService } from './error.service';
 
 @Component({
     selector: 'app-error',
@@ -9,7 +9,8 @@ import { ErrorService } from "./error.service";
     styles: ['./error.component.css']
 })
 
-export class ErrorComponent implements OnInit{
+export class ErrorComponent implements OnInit{ 
+
     error: Error;
     display = 'none';
 

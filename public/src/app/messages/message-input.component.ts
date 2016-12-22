@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
-import { Message } from "./message.model";
-import { MessageService } from "./message.service";
+import { Message } from './message.model';
+import { MessageService } from './message.service';
 
 @Component({
     selector: 'app-message-input',
@@ -20,8 +20,8 @@ export class MessageInputComponent implements OnInit {
             this.message.content = form.value.content;
             this.messageService.updateMessage(this.message)
                 .subscribe(
-                result => console.log(result, "result")
-                )
+                result => console.log(result, 'result')
+              );
             this.message = null;
         } else {
             // Create
