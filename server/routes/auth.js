@@ -5,7 +5,9 @@ const passport = require('passport');
 const User = require('../models/user');
 const router = express.Router();
 
-const isLoggedIn = (req, res, next) => {
+const isLoggedIn = (req, res, next) => {;
+	console.log(req, "req");
+	console.log(res, "res");
 	if (req.isAuthenticated()) {
 		return next();
 	}
@@ -14,8 +16,7 @@ const isLoggedIn = (req, res, next) => {
 
 module.exports = function(app, passport) {
 
-	router.post('/signup', function handleLocalSignin(req, res, next) {
-
+	router.post('/signup', function(req, res, next) {
 		passport.authenticate('local-signup', function(err, user, info) {
 			console.log(err, "err");
 			console.log(user, "user");
@@ -26,16 +27,18 @@ module.exports = function(app, passport) {
 					error: err
 				});
 			}
-			req.signup(user, function(err) {
+			req.logIn(user, function(err) {
 				if (err) {
-					return res.status(500).json({
+					return next(res.status(500).json({
 						title: 'The server turned to the dark side',
 						error: err
-					});
+					}));
 				}
-				return res.status(201).json({
-					message: 'Success was had! You\'re signed up',
-					obj: info
+				// here redirect to profile
+				// isLoggedIn(req, res, next); // cannot set headers
+				return res.status(200).json({
+					message: 'Success was had! You\'re logged in',
+					obj: user
 				})
 			})
 		})(req, res, next);
