@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
 const Message = require('../models/message');
@@ -26,10 +25,10 @@ router.get('/', (req, res, next) => {
 });
 
 // es6 for fun
-router.use('/', (req, res, next) => jwt.verify(req.query.token, 'secret', (err, decoded) => err ? res.status(401).json({
-    title: 'Not Authenticated ya here',
-    error: err
-}) : next()));
+// router.use('/', (req, res, next) => jwt.verify(req.query.token, 'secret', (err, decoded) => err ? res.status(401).json({
+//     title: 'Not Authenticated ya here',
+//     error: err
+// }) : next()));
 
 router.post('/', (req, res, next) => {
     let decoded = jwt.decode(req.query.token);

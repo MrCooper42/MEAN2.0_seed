@@ -18,15 +18,18 @@ import * as import9 from '@angular/router/src/router';
 import * as import10 from '../../../../node_modules/@angular/forms/src/directives/reactive_directives/form_group_directive.ngfactory';
 import * as import11 from '../../../../node_modules/@angular/forms/src/directives/ng_control_status.ngfactory';
 import * as import12 from '../../../../node_modules/@angular/forms/src/directives/default_value_accessor.ngfactory';
-import * as import13 from '../../../../node_modules/@angular/forms/src/directives/reactive_directives/form_control_name.ngfactory';
-import * as import14 from '@angular/core/src/linker/element_ref';
-import * as import15 from '@angular/forms/src/directives/default_value_accessor';
-import * as import16 from '@angular/forms/src/directives/control_value_accessor';
-import * as import17 from '@angular/forms/src/directives/reactive_directives/form_control_name';
-import * as import18 from '@angular/forms/src/directives/ng_control';
-import * as import19 from '@angular/forms/src/directives/ng_control_status';
-import * as import20 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
-import * as import21 from '@angular/forms/src/directives/control_container';
+import * as import13 from '../../../../node_modules/@angular/forms/src/directives/validators.ngfactory';
+import * as import14 from '../../../../node_modules/@angular/forms/src/directives/reactive_directives/form_control_name.ngfactory';
+import * as import15 from '@angular/core/src/linker/element_ref';
+import * as import16 from '@angular/forms/src/directives/default_value_accessor';
+import * as import17 from '@angular/forms/src/directives/validators';
+import * as import18 from '@angular/forms/src/validators';
+import * as import19 from '@angular/forms/src/directives/control_value_accessor';
+import * as import20 from '@angular/forms/src/directives/reactive_directives/form_control_name';
+import * as import21 from '@angular/forms/src/directives/ng_control';
+import * as import22 from '@angular/forms/src/directives/ng_control_status';
+import * as import23 from '@angular/forms/src/directives/reactive_directives/form_group_directive';
+import * as import24 from '@angular/forms/src/directives/control_container';
 export class Wrapper_SigninComponent {
   /*private*/ _eventHandler:Function;
   context:import0.SigninComponent;
@@ -104,10 +107,12 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
   _text_8:any;
   _el_9:any;
   _DefaultValueAccessor_9_3:import12.Wrapper_DefaultValueAccessor;
-  _NG_VALUE_ACCESSOR_9_4:any[];
-  _FormControlName_9_5:import13.Wrapper_FormControlName;
-  _NgControl_9_6:any;
-  _NgControlStatus_9_7:import11.Wrapper_NgControlStatus;
+  _PatternValidator_9_4:import13.Wrapper_PatternValidator;
+  _NG_VALIDATORS_9_5:any[];
+  _NG_VALUE_ACCESSOR_9_6:any[];
+  _FormControlName_9_7:import14.Wrapper_FormControlName;
+  _NgControl_9_8:any;
+  _NgControlStatus_9_9:import11.Wrapper_NgControlStatus;
   _text_10:any;
   _text_11:any;
   _el_12:any;
@@ -118,7 +123,7 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
   _el_17:any;
   _DefaultValueAccessor_17_3:import12.Wrapper_DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_17_4:any[];
-  _FormControlName_17_5:import13.Wrapper_FormControlName;
+  _FormControlName_17_5:import14.Wrapper_FormControlName;
   _NgControl_17_6:any;
   _NgControlStatus_17_7:import11.Wrapper_NgControlStatus;
   _text_18:any;
@@ -128,10 +133,10 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
   _text_22:any;
   _text_23:any;
   _text_24:any;
-  /*private*/ _expr_38:any;
+  /*private*/ _expr_40:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import1.AppView<any>,parentIndex:number,parentElement:any) {
     super(View_SigninComponent0,renderType_SigninComponent,import5.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import6.ChangeDetectorStatus.CheckAlways);
-    this._expr_38 = import6.UNINITIALIZED;
+    this._expr_40 = import6.UNINITIALIZED;
   }
   createInternal(rootSelector:string):import7.ComponentRef<any> {
     const parentRenderNode:any = this.renderer.createViewRoot(this.parentElement);
@@ -147,12 +152,14 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
     this._el_6 = import3.createRenderElement(this.renderer,this._el_4,'label',new import3.InlineArray2(2,'for','email'),(null as any));
     this._text_7 = this.renderer.createText(this._el_6,'Email',(null as any));
     this._text_8 = this.renderer.createText(this._el_4,'\n            ',(null as any));
-    this._el_9 = import3.createRenderElement(this.renderer,this._el_4,'input',new import3.InlineArray8(8,'class','form-control','formControlName','email','id','email','type','email'),(null as any));
-    this._DefaultValueAccessor_9_3 = new import12.Wrapper_DefaultValueAccessor(this.renderer,new import14.ElementRef(this._el_9));
-    this._NG_VALUE_ACCESSOR_9_4 = [this._DefaultValueAccessor_9_3.context];
-    this._FormControlName_9_5 = new import13.Wrapper_FormControlName(this._ControlContainer_2_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_9_4);
-    this._NgControl_9_6 = this._FormControlName_9_5.context;
-    this._NgControlStatus_9_7 = new import11.Wrapper_NgControlStatus(this._NgControl_9_6);
+    this._el_9 = import3.createRenderElement(this.renderer,this._el_4,'input',new import3.InlineArray16(10,'class','form-control','formControlName','email','id','email','pattern','^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$','type','email'),(null as any));
+    this._DefaultValueAccessor_9_3 = new import12.Wrapper_DefaultValueAccessor(this.renderer,new import15.ElementRef(this._el_9));
+    this._PatternValidator_9_4 = new import13.Wrapper_PatternValidator();
+    this._NG_VALIDATORS_9_5 = [this._PatternValidator_9_4.context];
+    this._NG_VALUE_ACCESSOR_9_6 = [this._DefaultValueAccessor_9_3.context];
+    this._FormControlName_9_7 = new import14.Wrapper_FormControlName(this._ControlContainer_2_4,this._NG_VALIDATORS_9_5,(null as any),this._NG_VALUE_ACCESSOR_9_6);
+    this._NgControl_9_8 = this._FormControlName_9_7.context;
+    this._NgControlStatus_9_9 = new import11.Wrapper_NgControlStatus(this._NgControl_9_8);
     this._text_10 = this.renderer.createText(this._el_4,'\n        ',(null as any));
     this._text_11 = this.renderer.createText(this._el_2,'\n        ',(null as any));
     this._el_12 = import3.createRenderElement(this.renderer,this._el_2,'div',new import3.InlineArray2(2,'class','form-group'),(null as any));
@@ -161,9 +168,9 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
     this._text_15 = this.renderer.createText(this._el_14,'Password',(null as any));
     this._text_16 = this.renderer.createText(this._el_12,'\n            ',(null as any));
     this._el_17 = import3.createRenderElement(this.renderer,this._el_12,'input',new import3.InlineArray8(8,'class','form-control','formControlName','password','id','password','type','password'),(null as any));
-    this._DefaultValueAccessor_17_3 = new import12.Wrapper_DefaultValueAccessor(this.renderer,new import14.ElementRef(this._el_17));
+    this._DefaultValueAccessor_17_3 = new import12.Wrapper_DefaultValueAccessor(this.renderer,new import15.ElementRef(this._el_17));
     this._NG_VALUE_ACCESSOR_17_4 = [this._DefaultValueAccessor_17_3.context];
-    this._FormControlName_17_5 = new import13.Wrapper_FormControlName(this._ControlContainer_2_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_17_4);
+    this._FormControlName_17_5 = new import14.Wrapper_FormControlName(this._ControlContainer_2_4,(null as any),(null as any),this._NG_VALUE_ACCESSOR_17_4);
     this._NgControl_17_6 = this._FormControlName_17_5.context;
     this._NgControlStatus_17_7 = new import11.Wrapper_NgControlStatus(this._NgControl_17_6);
     this._text_18 = this.renderer.createText(this._el_12,'\n        ',(null as any));
@@ -213,19 +220,21 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import15.DefaultValueAccessor) && (9 === requestNodeIndex))) { return this._DefaultValueAccessor_9_3.context; }
-    if (((token === import16.NG_VALUE_ACCESSOR) && (9 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_9_4; }
-    if (((token === import17.FormControlName) && (9 === requestNodeIndex))) { return this._FormControlName_9_5.context; }
-    if (((token === import18.NgControl) && (9 === requestNodeIndex))) { return this._NgControl_9_6; }
-    if (((token === import19.NgControlStatus) && (9 === requestNodeIndex))) { return this._NgControlStatus_9_7.context; }
-    if (((token === import15.DefaultValueAccessor) && (17 === requestNodeIndex))) { return this._DefaultValueAccessor_17_3.context; }
-    if (((token === import16.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_17_4; }
-    if (((token === import17.FormControlName) && (17 === requestNodeIndex))) { return this._FormControlName_17_5.context; }
-    if (((token === import18.NgControl) && (17 === requestNodeIndex))) { return this._NgControl_17_6; }
-    if (((token === import19.NgControlStatus) && (17 === requestNodeIndex))) { return this._NgControlStatus_17_7.context; }
-    if (((token === import20.FormGroupDirective) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._FormGroupDirective_2_3.context; }
-    if (((token === import21.ControlContainer) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._ControlContainer_2_4; }
-    if (((token === import19.NgControlStatusGroup) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._NgControlStatusGroup_2_5.context; }
+    if (((token === import16.DefaultValueAccessor) && (9 === requestNodeIndex))) { return this._DefaultValueAccessor_9_3.context; }
+    if (((token === import17.PatternValidator) && (9 === requestNodeIndex))) { return this._PatternValidator_9_4.context; }
+    if (((token === import18.NG_VALIDATORS) && (9 === requestNodeIndex))) { return this._NG_VALIDATORS_9_5; }
+    if (((token === import19.NG_VALUE_ACCESSOR) && (9 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_9_6; }
+    if (((token === import20.FormControlName) && (9 === requestNodeIndex))) { return this._FormControlName_9_7.context; }
+    if (((token === import21.NgControl) && (9 === requestNodeIndex))) { return this._NgControl_9_8; }
+    if (((token === import22.NgControlStatus) && (9 === requestNodeIndex))) { return this._NgControlStatus_9_9.context; }
+    if (((token === import16.DefaultValueAccessor) && (17 === requestNodeIndex))) { return this._DefaultValueAccessor_17_3.context; }
+    if (((token === import19.NG_VALUE_ACCESSOR) && (17 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_17_4; }
+    if (((token === import20.FormControlName) && (17 === requestNodeIndex))) { return this._FormControlName_17_5.context; }
+    if (((token === import21.NgControl) && (17 === requestNodeIndex))) { return this._NgControl_17_6; }
+    if (((token === import22.NgControlStatus) && (17 === requestNodeIndex))) { return this._NgControlStatus_17_7.context; }
+    if (((token === import23.FormGroupDirective) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._FormGroupDirective_2_3.context; }
+    if (((token === import24.ControlContainer) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._ControlContainer_2_4; }
+    if (((token === import22.NgControlStatusGroup) && ((2 <= requestNodeIndex) && (requestNodeIndex <= 22)))) { return this._NgControlStatusGroup_2_5.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -234,26 +243,30 @@ export class View_SigninComponent0 extends import1.AppView<import0.SigninCompone
     this._FormGroupDirective_2_3.ngDoCheck(this,this._el_2,throwOnChange);
     this._NgControlStatusGroup_2_5.ngDoCheck(this,this._el_2,throwOnChange);
     this._DefaultValueAccessor_9_3.ngDoCheck(this,this._el_9,throwOnChange);
-    const currVal_9_1_0:any = 'email';
-    this._FormControlName_9_5.check_name(currVal_9_1_0,throwOnChange,false);
-    this._FormControlName_9_5.ngDoCheck(this,this._el_9,throwOnChange);
-    this._NgControlStatus_9_7.ngDoCheck(this,this._el_9,throwOnChange);
+    const currVal_9_1_0:any = '^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$';
+    this._PatternValidator_9_4.check_pattern(currVal_9_1_0,throwOnChange,false);
+    this._PatternValidator_9_4.ngDoCheck(this,this._el_9,throwOnChange);
+    const currVal_9_2_0:any = 'email';
+    this._FormControlName_9_7.check_name(currVal_9_2_0,throwOnChange,false);
+    this._FormControlName_9_7.ngDoCheck(this,this._el_9,throwOnChange);
+    this._NgControlStatus_9_9.ngDoCheck(this,this._el_9,throwOnChange);
     this._DefaultValueAccessor_17_3.ngDoCheck(this,this._el_17,throwOnChange);
     const currVal_17_1_0:any = 'password';
     this._FormControlName_17_5.check_name(currVal_17_1_0,throwOnChange,false);
     this._FormControlName_17_5.ngDoCheck(this,this._el_17,throwOnChange);
     this._NgControlStatus_17_7.ngDoCheck(this,this._el_17,throwOnChange);
     this._NgControlStatusGroup_2_5.checkHost(this,this,this._el_2,throwOnChange);
-    this._NgControlStatus_9_7.checkHost(this,this,this._el_9,throwOnChange);
+    this._PatternValidator_9_4.checkHost(this,this,this._el_9,throwOnChange);
+    this._NgControlStatus_9_9.checkHost(this,this,this._el_9,throwOnChange);
     this._NgControlStatus_17_7.checkHost(this,this,this._el_17,throwOnChange);
-    const currVal_38:boolean = !this.context.myForm.valid;
-    if (import3.checkBinding(throwOnChange,this._expr_38,currVal_38)) {
-      this.renderer.setElementProperty(this._el_20,'disabled',currVal_38);
-      this._expr_38 = currVal_38;
+    const currVal_40:boolean = !this.context.myForm.valid;
+    if (import3.checkBinding(throwOnChange,this._expr_40,currVal_40)) {
+      this.renderer.setElementProperty(this._el_20,'disabled',currVal_40);
+      this._expr_40 = currVal_40;
     }
   }
   destroyInternal():void {
-    this._FormControlName_9_5.ngOnDestroy();
+    this._FormControlName_9_7.ngOnDestroy();
     this._FormControlName_17_5.ngOnDestroy();
     this._FormGroupDirective_2_3.ngOnDestroy();
   }
