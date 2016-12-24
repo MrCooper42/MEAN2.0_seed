@@ -14,19 +14,23 @@ const configAuth = require('./auth');
 
 module.exports = function(passport) {
 
+function init() {
+
   passport.serializeUser((user, done) => {
-    delete user.local.password;// still passed in
-    delete user.local.isAdmin;// still passed in
+    console.log(user);
+    delete user.local.password; // still passed in
+    delete user.local.isAdmin; // still passed in
     done(null, user)
   });
 
   passport.deserializeUser((user, done) => {
     User.findById(user._id, (err, user) => {
-      delete user.local.password;// still passed in
-      delete user.local.isAdmin;// still passed in
+      delete user.local.password; // still passed in
+      delete user.local.isAdmin; // still passed in
       done(err, user);
     });
   });
+}
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
@@ -53,6 +57,7 @@ module.exports = function(passport) {
             if (err) {
               throw err;
             }
+            init(newUser);
             return done(null, newUser);
           });
         }
@@ -60,27 +65,28 @@ module.exports = function(passport) {
     });
   }));
 
-  passport.use('local-login', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
-    passReqToCallback: true
-  }, (req, email, password, done) => {
-    User.findOne({
-      'local.email': email
-    }, (err, user) => {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false);
-      }
-      if (!user.validatePassword(password)) {
-        return done(null, false);
-      } else {
-        return done(null, user);
-      }
-    })
-  }));
+    passport.use('local-login', new LocalStrategy({
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true
+    }, (req, email, password, done) => {
+      User.findOne({
+        'local.email': email
+      }, (err, user) => {
+        if (err) {
+          return done(err);
+        }
+        if (!user) {
+          return done(null, false);
+        }
+        if (!user.validatePassword(password)) {
+          return done(null, false);
+        } else {
+          init(user);
+          return done(null, user);
+        }
+      });
+    }));
 
   //social logins
 

@@ -6,8 +6,6 @@ const User = require('../models/user');
 const router = express.Router();
 
 const isLoggedIn = (req, res, next) => {;
-	console.log(req, "req");
-	console.log(res, "res");
 	if (req.isAuthenticated()) {
 		return next();
 	}
@@ -16,11 +14,12 @@ const isLoggedIn = (req, res, next) => {;
 
 module.exports = function(app, passport) {
 
+	// req.session.user._id
+	// req.session.user.local
+	// req.session.user.iAdmin
+
 	router.post('/signup', function(req, res, next) {
 		passport.authenticate('local-signup', function(err, user, info) {
-			console.log(err, "err");
-			console.log(user, "user");
-			console.log(info, "info");
 			if (err) {
 				return res.status(500).json({
 					title: 'The server turned to the dark side',
@@ -35,20 +34,16 @@ module.exports = function(app, passport) {
 					}));
 				}
 				// here redirect to profile
-				// isLoggedIn(req, res, next); // cannot set headers
 				return res.status(200).json({
 					message: 'Success was had! You\'re logged in',
 					obj: user
-				})
+				});
 			})
 		})(req, res, next);
 	});
 
 	router.post('/login', function(req, res, next) {
 		passport.authenticate('local-login', function(err, user, info) {
-			console.log(err, "err");
-			console.log(user, "user");
-			console.log(info, "info");
 			if (err) {
 				return next(res.status(500).json({
 					title: 'The server turned to the dark side',
