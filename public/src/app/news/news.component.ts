@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from './news.service';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  styleUrls: ['./news.component.css'],
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent {
+  private news: Array<NewsComponent> = [];
 
-  constructor() { }
+  constructor(newsService: NewsService) {
 
-  ngOnInit() {
-  }
+    newsService.getPulse()
+      .subscribe((res) => {
+        console.log(res, "i am here");
+        this.news = res.body;
+        // news => this.news = news,
+      })
+   }
+
+  // ngOnInit() {
+  // }
 
 }
