@@ -17,7 +17,6 @@ import { NewsComponent } from './news/news.component';
 import { GamesComponent } from './games/games.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
 import { FilesComponent } from './files/files.component';
-import { MessageModule } from './messages/message.module';
 
 
 @NgModule({
@@ -39,7 +38,6 @@ import { MessageModule } from './messages/message.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MessageModule
   ],
   providers: [AuthService, ErrorService],
   bootstrap: [AppComponent]

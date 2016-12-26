@@ -29,7 +29,7 @@ export class AuthService {
   signin(user: User) {
     const body = JSON.stringify(user);
     const headers = new Headers({ 'Content-Type': 'application/json' });
-    return this.http.post('http://localhost:3000/auth/login', body, { headers: headers })
+    return this.http.post('http://localhost:3000/auth/signin', body, { headers: headers })
       .map((response: Response) => response.json())
       .catch((error: Response) => {
         this.errorService.handleError(error.json());

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-header',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+  isIn = false; // store state
+  toggleState() {
+    let bool = this.isIn;
+    this.isIn = bool === false ? true : false;
+  }
+
+  isNavbarCollapsed = false;
+
 }

@@ -44,7 +44,7 @@ app.use(cookieParser());
 // passport and auth
 app.use(session({
   secret: process.env.SECRET,
-  resave: false,
+  resave: true,
   saveUninitialized: false
 }));
 app.use(express.static(path.join(__dirname, '../public')));

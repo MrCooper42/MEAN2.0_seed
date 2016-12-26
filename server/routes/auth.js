@@ -1,8 +1,10 @@
 'use strict'
 
 const express = require('express');
-const passport = require('passport');
+// const passport = require('passport');
 const User = require('../models/user');
+// const bcrypt = require('bcryptjs');
+// const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 const isLoggedIn = (req, res, next) => {;
@@ -42,21 +44,13 @@ module.exports = function(app, passport) {
 		})(req, res, next);
 	});
 
-	router.post('/login', function(req, res, next) {
+	router.post('/signin', (req, res, next) => {
 		passport.authenticate('local-login', function(err, user, info) {
 			if (err) {
-				return next(res.status(500).json({
+				return res.status(500).json({
 					title: 'The server turned to the dark side',
 					error: err
-				}));
-			}
-			if (!user) {
-				return next(res.json(403, {
-					title: "Login failed",
-					error: {
-						message: 'Invalid login credentials'
-					}
-				}));
+				});
 			}
 			req.logIn(user, function(err) {
 				if (err) {
@@ -65,12 +59,48 @@ module.exports = function(app, passport) {
 						error: err
 					}));
 				}
+				// here redirect to profile
 				return res.status(200).json({
-					message: 'Success was had! You\'re logged in'
-				})
+					message: 'Success was had! You\'re logged in',
+					obj: user
+				});
 			})
 		})(req, res, next);
 	});
+
+	// 	User.findOne({
+	// 		'local.email': req.body.email
+	// 	}, (err, user) => {
+	// 		console.log(user, "user in signin");
+	// 		if (err) {
+	// 			return res.status(500).json({
+	// 				title: 'Bad things happened',
+	// 				error: err
+	// 			});
+	// 		}
+	// 		if (!user) {
+	// 			return res.status(500).json({
+	// 				title: 'Login failed',
+	// 				error: {
+	// 					message: 'Invalid login credentials'
+	// 				}
+	// 			});
+	// 		}
+	// 		if (!bcrypt.compareSync(req.body.password, user.password)) {
+	// 			return res.status(500).json({
+	// 				title: 'Login failed',
+	// 				error: {
+	// 					message: 'Invalid login credentials'
+	// 				}
+	// 			});
+	//
+	// 		res.status(200).json({
+	// 			message: 'Succesfully logged in',
+	// 			token: token,
+	// 			userId: user._id
+	// 		})
+	// 	});
+	// });
 
 	router.get('/logout', (req, res) => {
 		req.logout();

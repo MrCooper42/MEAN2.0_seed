@@ -13,8 +13,8 @@ const User = require('../server/models/user');
 const configAuth = require('./auth');
 
 module.exports = function(passport) {
-
-function init() {
+  //
+  // function init() {
 
   passport.serializeUser((user, done) => {
     console.log(user);
@@ -30,7 +30,6 @@ function init() {
       done(err, user);
     });
   });
-}
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
@@ -42,11 +41,15 @@ function init() {
         'local.email': email
       }, (err, user) => {
         if (err) {
+          console.log("error in signup: " + err);
           return done(err)
         }
         if (user) {
+          console.log("User exists");
           return done(null, false);
         } else {
+          console.log(req.body, "body");
+          console.log(req.param, "param");
           let newUser = new User();
           newUser.local.firstName = req.body.firstName
           newUser.local.lastName = req.body.lastName
@@ -57,7 +60,6 @@ function init() {
             if (err) {
               throw err;
             }
-            init(newUser);
             return done(null, newUser);
           });
         }
@@ -65,28 +67,28 @@ function init() {
     });
   }));
 
-    passport.use('local-login', new LocalStrategy({
-      usernameField: 'email',
-      passwordField: 'password',
-      passReqToCallback: true
-    }, (req, email, password, done) => {
-      User.findOne({
-        'local.email': email
-      }, (err, user) => {
-        if (err) {
-          return done(err);
-        }
-        if (!user) {
-          return done(null, false);
-        }
-        if (!user.validatePassword(password)) {
-          return done(null, false);
-        } else {
-          init(user);
-          return done(null, user);
-        }
-      });
-    }));
+  passport.use('local-login', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, (req, email, password, done) => {
+    console.log(email, "here in passport");
+    User.findOne({
+      'local.email': email
+    }, (err, user) => {
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false);
+      }
+      if (!user.validatePassword(password)) {
+        return done(null, false);
+      } else {
+        return done(null, user);
+      }
+    });
+  }));
 
   //social logins
 

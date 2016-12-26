@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs')
 const Schema = mongoose.Schema;
 // const passportLocalMongoose = require('passport-local-mongoose');
+// think about adding a trim to password and email
 
 const schema = new Schema({
   isAdmin: {

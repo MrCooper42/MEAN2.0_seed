@@ -1,11 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { MessagesComponent } from './messages/messages.component';
+import { NewsComponent } from './news/news.component';
+import { ProfileComponent } from './profile/profile.component';
+import { GamesComponent } from './games/games.component';
 import { AuthenticationComponent } from './auth/authentication.component';
 
 const APP_ROUTES: Routes = [
-    { path: '', redirectTo: '/messages', pathMatch: 'full' },
-    { path: 'messages', component: MessagesComponent },
+    { path: '', redirectTo: '/news', pathMatch: 'full' },
+    { path: 'news', component: NewsComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'games', component: GamesComponent },
     { path: 'auth', component: AuthenticationComponent, loadChildren: "./auth/auth.module#AuthModule" }
 ];
 
