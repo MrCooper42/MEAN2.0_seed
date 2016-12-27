@@ -1,4 +1,15 @@
 # MEAN2Seed
+# Bash npm i
+# Bash npm run build:prod
+# Bash npm run build
+# Bash npm start
+# Serving on localhost:3000
+
+
+
+
+
+# Angular-CLI
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
