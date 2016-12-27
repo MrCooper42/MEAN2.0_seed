@@ -14,6 +14,7 @@ import { ErrorComponent } from './errors/error.component';
 import { ErrorService } from './errors/error.service';
 import { ProfileComponent } from './profile/profile.component';
 import { NewsComponent } from './news/news.component';
+import { NewsService } from './news/news.service';
 import { GamesComponent } from './games/games.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
 import { FilesComponent } from './files/files.component';
@@ -39,7 +40,11 @@ import { FilesComponent } from './files/files.component';
     FormsModule,
     HttpModule,
   ],
-  providers: [AuthService, ErrorService],
+  providers: [
+    AuthService,
+    ErrorService,
+    NewsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

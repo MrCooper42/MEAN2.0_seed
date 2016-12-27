@@ -1,3 +1,10 @@
 <h1>Data</h1>
-<li *ngFor = "let new of news">{{new.title}}</li>
+<div *ngFor = "let new of news">
+  <p>
+    {{new.title}}
+  </p>
+  <p>
+    {{new.image}}
+  </p>
+</div>
 <p>{{news}}</p>

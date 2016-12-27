@@ -12,6 +12,9 @@ export class NewsService {
 
   getPulse() {
     return this.http.get('/api/pulse')
-    .map(res => res.json())
+    .map(res => {
+      console.log(res.json(), "here inn service")
+      return res.json()
+    })
   }
 }

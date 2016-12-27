@@ -7,7 +7,7 @@ import { NewsService } from './news.service';
   styleUrls: ['./news.component.css'],
 })
 export class NewsComponent {
-  private news: Array<NewsComponent> = [];
+  public news: Array<NewsComponent> = [];
 
   constructor(newsService: NewsService) {
 

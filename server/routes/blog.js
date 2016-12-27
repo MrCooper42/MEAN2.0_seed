@@ -5,15 +5,15 @@ const router = express.Router();
 const Blog = require('../models/blog');
 
 // INDEX
-router.get("/", function(req, res){
-    Blog.find({}, function(err, blogs){
-        if(err){
-            console.log(err);
-        } else {
-            res.render("blogs/index", {blogs: blogs});
-        }
-    });
-});
+// router.get("/", function(req, res){
+//     Blog.find({}, function(err, blogs){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             res.render("blogs/index", {blogs: blogs});
+//         }
+//     });
+// });
 
 // NEW
 // router.get("/new", function (req, res){

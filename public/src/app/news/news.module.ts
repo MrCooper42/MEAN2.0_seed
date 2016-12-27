@@ -12,3 +12,4 @@ import { NewsService } from './news.service';
   providers: [NewsService]
 })
 export class NewsModule { }
+// add routing if you want to use this
