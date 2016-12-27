@@ -24,8 +24,6 @@ mongoose.connect(`mongodb://localhost:27017/mean2-test`);
 
 const appRoutes = require('./routes/app');
 const authRoutes = require('./routes/auth')(app, passport);
-const userRoutes = require('./routes/user');
-const messageRoutes = require('./routes/messages');
 
 
 // view engine setup
@@ -70,9 +68,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', appRoutes);
-app.use('/message', messageRoutes);
 app.use('/auth', authRoutes);
-// app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => res.render('index'));

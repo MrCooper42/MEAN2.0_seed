@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
-import { User } from './user.model';
-import { AuthService } from './auth.service';
+import { User } from "./user.model"
+import { AuthService } from "./auth.service"
 
 @Component({
     selector: 'app-signin',
@@ -19,25 +19,24 @@ export class SigninComponent implements OnInit {
         const user = new User(
             this.myForm.value.email,
             this.myForm.value.password
-        );
+        )
         this.authService.signin(user)
             .subscribe(
             data => {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('userId', data.userId);
-                this.router.navigateByUrl('/');
+                this.router.navigateByUrl('/profile');
             },
             error => console.error(error)
-          );
-        this.myForm.reset();
+            )
+        this.myForm.reset()
     }
 
     ngOnInit() {
-      const emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
         this.myForm = new FormGroup({
             email: new FormControl(null, [
                 Validators.required,
-                Validators.pattern(emailRegex)
+                Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
             ]),
             password: new FormControl(null, Validators.required)
         });
