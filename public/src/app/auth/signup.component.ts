@@ -29,10 +29,8 @@ export class SignupComponent implements OnInit {
         this.authService.signin(user)
           .subscribe(
           data => {
-            console.log(data, "data sent from signup"),
-              localStorage.setItem('token', data.token);
+            localStorage.setItem('token', data.token);
             localStorage.setItem('userId', data.userId);
-            console.log(localStorage, "localStorage")
             this.router.navigateByUrl('/profile');
           },
           error => console.error(error)

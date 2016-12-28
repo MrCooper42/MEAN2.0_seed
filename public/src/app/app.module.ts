@@ -18,6 +18,7 @@ import { NewsService } from './news/news.service';
 import { GamesComponent } from './games/games.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
 import { FilesComponent } from './files/files.component';
+import { ProfileEditComponent } from './profile/profile-edit.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FilesComponent } from './files/files.component';
     NewsComponent,
     GamesComponent,
     JobListingsComponent,
-    FilesComponent
+    FilesComponent,
+    ProfileEditComponent
   ],
   imports: [
     NgbModule.forRoot(),

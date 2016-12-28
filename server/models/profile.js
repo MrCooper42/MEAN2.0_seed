@@ -1,38 +1,83 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 //use moment
 
-var User = require('./user')
+const User = require('./user');
+const Blog = require('./blog');
+const Works = require('./works');
 
-var schema = new Schema({
-    title: {
-      type: String,
-      required: true
-    },
-    image: {
+const schema = new Schema({
+  title: {
+    type: String,
+  },
+  avatar: {
+    type: String
+  },
+  summary: {
+    type: String
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  experiance: [
+    {
+      company: {
+        type: String
+      },
+      roll: {
+        type: String
+      },
+      dates: {
+        type: Date // get a date range?
+      },
+      description: {
+        type: String
+      }
+    }
+  ],
+  education: [
+    {
+      school: {
+        type: String
+      },
+      study: {
+        type: String
+      },
+      degree: {
+        type: String
+      },
+      dates: {
+        type: Date // get date range?
+      },
+      extras: {
+        type: String
+      }
+    }
+  ],
+  skills: [
+    {
       type: String
-    },
-    body: {
-        type: String,
-        required: true
-    },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    // comments: [{
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Comment'
-    // }],
+    }
+  ],
+  user: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ],
+  works: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Works'
+    }
+  ],
+  blog: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Blog'
+    }
+  ]
 });
-
-
-// schema.post('remove', (message) => {
-//     User.findById(message.user, (err, user) => {
-//         user.messages.pull(message)
-//         user.save();
-//     });
-// });
-
 
 module.exports = mongoose.model('Profile', schema);
