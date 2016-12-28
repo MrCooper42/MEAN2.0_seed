@@ -56,11 +56,12 @@ router.post('/signin', (req, res, next) => {
                 }
             });
         }
-        let token = jwt.sign({
+        var token = jwt.sign({
             user: user
         }, 'secret', {
             expiresIn: 7200
         });
+        console.log(token, "token signed in");
         res.status(200).json({
             message: 'Succesfully logged in',
             token: token,

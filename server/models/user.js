@@ -1,10 +1,10 @@
 'use strict'
 
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt-nodejs')
 const Schema = mongoose.Schema;
 var mongooseUniqueValidator = require('mongoose-unique-validator');
 // const passportLocalMongoose = require('passport-local-mongoose');
+// const bcrypt = require('bcrypt-nodejs')
 // think about adding a trim to password and email
 
 const schema = new Schema({

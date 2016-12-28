@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 // webpack html imports
-
+const TOKEN = localStorage.getItem('token')
 const URL = '/upload/';
 // const URL = 'http://local:3000/upload/';
 
@@ -12,7 +12,8 @@ const URL = '/upload/';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
-  public uploader: FileUploader = new FileUploader({url: URL});
+
+  public uploader: FileUploader = new FileUploader({url: URL, authToken: TOKEN});
   public hasBaseDropZoneOver:boolean = false;
   public hasAnotherDropZoneOver:boolean = false;
 
