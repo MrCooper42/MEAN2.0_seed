@@ -5,7 +5,7 @@
 # Bash npm start
 # Serving on localhost:3000
 
-
+looking into multer for local server storage and gridFS for mongo file chunking system 
 
 
 

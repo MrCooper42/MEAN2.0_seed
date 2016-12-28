@@ -17,7 +17,7 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 require('../config/passport')(passport);
 const mongoose = require('mongoose');
-// moment, method overide, and expressSanitizer would be good to add...
+// moment would be good to add
 
 const app = express();
 mongoose.connect(`mongodb://localhost:27017/mean2-test`);
@@ -64,6 +64,7 @@ app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 	res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Credentials', true);
 	next();
 });
 

@@ -40,6 +40,8 @@
     "mongoose": "^4.7.2",
     "mongoose-unique-validator": "^1.0.3",
     "morgan": "~1.7.0",
+    "multer": "^1.2.1",
+    "ng2-file-upload": "^1.1.4-2",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-github2": "^0.1.10",

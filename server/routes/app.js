@@ -4,6 +4,7 @@ const router = express.Router();
 
 const api = require('./api');
 const user = require('./user');
+const upload = require('./upload');
 const profile = require('./profile');
 const blog = require('./blog');
 const comment = require('./comment');
@@ -13,10 +14,11 @@ router.get('/', (req, res, next) =>{
   res.render('index');
 });
 
-router.use('/api', api)
-router.use('/user', user)
-router.use('/profile', profile)
-router.use('/blog', blog)
-router.use('/comment', comment)
+router.use('/api', api);
+router.use('/user', user);
+router.use('/upload', upload);
+router.use('/profile', profile);
+router.use('/blog', blog);
+router.use('/comment', comment);
 
 module.exports = router;

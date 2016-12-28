@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewsComponent } from './news/news.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GamesComponent } from './games/games.component';
+// import { UploadComponent } from './upload/upload.component';
 import { AuthenticationComponent } from './auth/authentication.component';
 
 const APP_ROUTES: Routes = [
@@ -10,6 +11,7 @@ const APP_ROUTES: Routes = [
     { path: 'news', component: NewsComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'games', component: GamesComponent },
+    // { path: 'upload', component: UploadComponent },
     { path: 'auth', component: AuthenticationComponent, loadChildren: "./auth/auth.module#AuthModule" }
 ];
 
