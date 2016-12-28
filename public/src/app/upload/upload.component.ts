@@ -3,8 +3,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
 
 // webpack html imports
 
-// const URL = '/api/';
-const URL = 'http://local:3000/api/';
+const URL = '/upload/';
+// const URL = 'http://local:3000/upload/';
 
 @Component({
   selector: 'app-upload',
