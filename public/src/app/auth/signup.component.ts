@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
-import { AuthService } from "./auth.service";
-import { User } from "./user.model"
+import { AuthService } from './auth.service';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-signup',
@@ -35,9 +35,8 @@ export class SignupComponent implements OnInit {
           },
           error => console.error(error)
           ),
-      error => console.error(error, "error on signup")
-      );
-    this.myForm.reset()
+      error => console.error(error, "error on signup"));
+    this.myForm.reset();
   }
 
   ngOnInit() {

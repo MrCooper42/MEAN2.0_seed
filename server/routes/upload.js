@@ -22,18 +22,23 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage}).single('file');
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
   let token = req.headers.authorization;
-  let decoded = jwt.decode(token)
-  DIR = `./server/uploads/${decoded.user._id}/`
-  upload(req, res, (err) => {
-    console.log(req.file, "req.file");
+  jwt.verify(token, 'secret', (err, decoded) => {
     if (err) {
-      res.json({error_code: 1, err_desc: err});
-      return;
+      res.status(401).json({title: 'Not Authenticated ya here', error: err})
+    } else {
+      DIR = `./server/uploads/${decoded.user._id}/`
+      upload(req, res, (err) => {
+        console.log(req.file, "req.file");
+        if (err) {
+          res.json({error_code: 1, err_desc: err});
+          return;
+        }
+        res.json({error_code: 0, err_desc: null});
+      });
     }
-    res.json({error_code: 0, err_desc: null});
-  });
+  })
 });
 
 module.exports = router;

@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Blog = require('../models/blog');
+const Profile = require('../models/profile');
 
 // INDEX
 // router.get("/", function(req, res){
@@ -20,15 +20,16 @@ const Blog = require('../models/blog');
 //    res.render("blogs/new");
 // });
 
+router.use('/:id', (req, res, next) => jwt.verify(req.query.token, 'secret', (err, decoded) => err ? res.status(401).json({
+    title: 'Not Authenticated ya here',
+    error: err
+}), console.log(err); : next()));
+
 // CREATE
-router.post("/", function(req, res){
+router.post("/:id", function(req, res){
     req.body.body = req.sanitize(req.body.body);
-    Blog.create(req.body, function(err, newBlog){
-        if(err){
-            res.render("blogs/new");
-        } else {
-            res.redirect("/blogs");
-        }
+    Profile.findOneAndUpdate({req.body}, {upsert: true, new: true}, function(){
+      
     });
 });
 

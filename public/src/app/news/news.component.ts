@@ -14,11 +14,10 @@ export class NewsComponent {
 
     newsService.getPulse()
       .subscribe((res) => {
-        console.log(res, "i am here");
         this.news = res.body;
         // news => this.news = news,
-      })
-   }
+      });
+   };
 
   // ngOnInit() {
   // }

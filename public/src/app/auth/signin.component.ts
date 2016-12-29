@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
-import { User } from "./user.model"
-import { AuthService } from "./auth.service"
+import { User } from './user.model';
+import { AuthService } from './auth.service';
 
 @Component({
     selector: 'app-signin',
@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
         const user = new User(
             this.myForm.value.email,
             this.myForm.value.password
-        )
+        );
         this.authService.signin(user)
             .subscribe(
             data => {
@@ -27,9 +27,8 @@ export class SigninComponent implements OnInit {
                 localStorage.setItem('userId', data.userId);
                 this.router.navigateByUrl('/profile');
             },
-            error => console.error(error)
-            )
-        this.myForm.reset()
+            error => console.error(error));
+        this.myForm.reset();
     }
 
     ngOnInit() {

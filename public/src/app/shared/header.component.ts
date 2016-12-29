@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service'
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,13 @@ import { AuthService } from '../auth/auth.service'
 
 
 export class HeaderComponent {
-  constructor(private authService: AuthService, private router: Router) { }
 
   isIn = false; // store state
+
+  isNavbarCollapsed = false;
+
+  constructor(private authService: AuthService, private router: Router) { }
+
   toggleState() {
     let bool = this.isIn;
     this.isIn = bool === false ? true : false;
@@ -21,10 +25,9 @@ export class HeaderComponent {
     // just getting userId
     return localStorage.getItem('userId');
   }
-  isNavbarCollapsed = false;
 
   onLogout() {
     this.authService.logout();
-    this.router.navigate(['/auth', 'signin'])
+    this.router.navigate(['/auth', 'signin']);
   }
 }

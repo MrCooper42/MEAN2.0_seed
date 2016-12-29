@@ -9,7 +9,7 @@ import { ErrorService } from './error.service';
     styles: ['./error.component.css']
 })
 
-export class ErrorComponent implements OnInit{ 
+export class ErrorComponent implements OnInit {
 
     error: Error;
     display = 'none';
