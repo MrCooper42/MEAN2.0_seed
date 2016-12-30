@@ -4,7 +4,6 @@ import {NgClass} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 import {AppComponent} from './app.component';
 
@@ -22,12 +21,11 @@ import { GamesComponent } from './games/games.component';
 import { JobListingsComponent } from './job-listings/job-listings.component';
 import { FilesComponent } from './files/files.component';
 import { ProfileEditComponent } from './profile/profile-edit.component';
-import { UploadComponent } from './upload/upload.component';
+import { UploadModule } from './upload/upload.module';
 
 
 @NgModule({
   declarations: [
-    FileSelectDirective,
     AppComponent,
     AuthenticationComponent,
     HeaderComponent,
@@ -38,14 +36,12 @@ import { UploadComponent } from './upload/upload.component';
     GamesComponent,
     JobListingsComponent,
     FilesComponent,
-    ProfileEditComponent,
-    FileSelectDirective,
-    FileDropDirective,
-    UploadComponent
+    ProfileEditComponent
   ],
   imports: [
     NgbModule.forRoot(),
     routing,
+    UploadModule,
     BrowserModule,
     FormsModule,
     HttpModule,

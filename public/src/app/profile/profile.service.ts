@@ -18,8 +18,7 @@ export class ProfileService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    const token = localStorage.getItem('token')
-      ? `?tokens=${localStorage('token')}` : '';
+    const token = localStorage.getItem('token') ? `?tokens=${localStorage.getItem('token')}` : '';
     return this.http.post(`http://localhost:3000/profile/skills/${token}`, body, { headers: headers })
       .map((response: Response) => {
         const result = response.json();

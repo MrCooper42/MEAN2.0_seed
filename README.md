@@ -5,7 +5,10 @@
 # Bash npm start
 # Serving on localhost:3000
 
-looking into multer for local server storage and gridFS for mongo file chunking system 
+if cannot find namespace webdriver npm install @types/selenium-webdriver@2.53.36 --save-dev
+
+
+looking into multer for local server storage and gridFS for mongo file chunking system
 
 
 
