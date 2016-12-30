@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/bin/www",
     "build": "del-cli ./public/js/app && webpack --config ./config/webpack.config.dev.js --progress --profile --watch",
-    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config config/webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'public/src/app/**/*.ngfactory.ts' 'public/src/app/**/*.shim.ts'",
+    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config config/webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' '!public/src/app/**/*.ngfactory.ts' '!public/src/app/**/*.shim.ts'",
     "lint": "tslint \"public/src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
