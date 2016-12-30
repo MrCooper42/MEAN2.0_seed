@@ -23,13 +23,13 @@ const Profile = require('../models/profile');
 router.use('/:id', (req, res, next) => jwt.verify(req.query.token, 'secret', (err, decoded) => err ? res.status(401).json({
     title: 'Not Authenticated ya here',
     error: err
-}), console.log(err); : next()));
+}) : next()));
 
 // CREATE
 router.post("/:id", function(req, res){
     req.body.body = req.sanitize(req.body.body);
-    Profile.findOneAndUpdate({req.body}, {upsert: true, new: true}, function(){
-      
+    Profile.findOneAndUpdate(req.body, {upsert: true, new: true}, function(){
+
     });
 });
 

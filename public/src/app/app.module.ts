@@ -14,6 +14,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthenticationComponent } from './auth/authentication.component';
 import { ErrorComponent } from './errors/error.component';
 import { ErrorService } from './errors/error.service';
+import { ProfileService } from './profile/profile.service';
 import { ProfileComponent } from './profile/profile.component';
 import { NewsComponent } from './news/news.component';
 import { NewsService } from './news/news.service';
@@ -52,7 +53,8 @@ import { UploadComponent } from './upload/upload.component';
   providers: [
     AuthService,
     ErrorService,
-    NewsService
+    NewsService,
+    ProfileService
   ],
   // entryComponents: [
   //   FileSelectDirective,
